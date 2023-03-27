@@ -1,0 +1,407 @@
+﻿@using CoreLayer.Helpers
+@model CoreLayer.ViewModel.IndexViewModel
+@{
+    ViewBag.Title = "خانه";
+}
+<div class="machine-learning-slider owl-carousel owl-theme">
+    <!-- Start Main Banner Area -->
+    @{
+        int CountGallery = 0;
+    }
+    @foreach (var galleryService in Model.GalleryService)
+    {
+        CountGallery++;
+
+
+
+        <div class="machine-learning-banner ml-bg@(CountGallery) jarallax" data-jarallax='{"speed": 0.3}'>
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="container mt-80">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7">
+                                <div class="banner-content">
+                                    <h1>@galleryService.Title</h1>
+                                    <p>@((galleryService.Descripton.Length) > 500 ? galleryService.Descripton.Substring(0, 499) + " ..." : galleryService.Descripton)</p>
+
+                                    <div class="banner-btn">
+                                        <a href="#" class="default-btn mr-4">
+                                            مشاهده بیشتر و درخواست <span></span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shape Images -->
+            <div class="shape-img2"><img src="UserTamplate/img/shape/2.svg" alt="image"></div>
+            <div class="shape-img3"><img src="UserTamplate/img/shape/3.svg" alt="image"></div>
+            <div class="shape-img4"><img src="UserTamplate/img/shape/4.png" alt="image"></div>
+            <div class="shape-img5"><img src="UserTamplate/img/shape/5.png" alt="image"></div>
+            <div class="shape-img6"><img src="UserTamplate/img/shape/6.png" alt="image"></div>
+            <div class="shape-img7"><img src="UserTamplate/img/shape/7.png" alt="image"></div>
+            <div class="shape-img8"><img src="UserTamplate/img/shape/8.png" alt="image"></div>
+            <div class="shape-img9"><img src="UserTamplate/img/shape/9.png" alt="image"></div>
+            <div class="shape-img10"><img src="UserTamplate/img/shape/10.png" alt="image"></div>
+        </div>
+
+
+    }
+</div>
+<!-- End Main Banner Area -->
+<!-- Ml Services Area -->
+<section class="ml-services-area bg-f2f2f7 pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">خدمات ما</span>
+            <h2>خدمات حرفه ای ما برای شما</h2>
+            <p>نوآوری های واقعی و تجربه مثبت مشتری ، هسته اصلی ارتباط موفق است. محصولات و خدمات جعلی وجود ندارد.</p>
+        </div>
+
+        <div class="row">
+
+            @if (Model.Service.Count != 0)
+            {
+                foreach (var service in Model.Service)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ml-service">
+                            <div class="image">
+                                <img src="/Files/FileService/@service.Id/@(service.Id).png" alt="ServiceImage">
+                            </div>
+                            <h3><a href="javascript:void(0)">@service.Title</a></h3>
+                            <p>@((service.Descripton.Length) > 100 ? service.Descripton.Substring(0, 99) + " ..." : service.Descripton)</p>
+                            <a onclick="ModalService('@service.Id')" href="javascript:void(0)" class="read-more">
+                                مشاهده بیشتر و درخواست
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="section-title">
+                    <p class="MyPNot">سرویسی برای نمایش وجود ندارد وجود ندارد</p>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- End Ml Services Area -->
+<!-- Start Projects Area -->
+<section class="projects-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">گالری پروژه</span>
+            <h2>نمونه کار های ما</h2>
+            <p>نوآوری های واقعی و تجربه مثبت مشتری ، هسته اصلی ارتباط موفق است. محصولات و خدمات جعلی وجود ندارد.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+
+        @if (Model.WorkSample.Count != 0)
+        {
+            <div class="row owl-theme">
+
+                @foreach (var workSample in Model.WorkSample)
+                {
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="work-card">
+                            <img src="/Files/FileWorkSamples/@workSample.Id/@(workSample.Id).png" alt="WorkSampleImage">
+
+                            <div class="content">
+                                <span>
+                                    <a href="#"> تاریخ انجام: @FixedTextHelper.FixedDateTime(workSample.CreateTime)</a>
+                                </span>
+                                <h3>
+                                    <a href="#">@workSample.Title</a>
+                                </h3>
+
+                                <a class="btn btn-outline-info" href="#">مشاهده بیشتر</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        }
+        else
+        {
+            <div class="section-title">
+                <p class="MyPNot">نمونه کاری برای نمایش وجود ندارد وجود ندارد</p>
+            </div>
+        }
+
+
+    </div>
+</section>
+
+<!-- End Projects Area -->
+<!-- Pricing Area -->
+<section class="pricing-area-two pt-100 pb-70 bg-f4f7fe">
+    <div class="container">
+        <div class="section-title">
+            <h2>برنامه قیمت گذاری ما</h2>
+            <p>نوآوری های واقعی و تجربه مثبت مشتری ، هسته اصلی ارتباط موفق است. محصولات و خدمات جعلی وجود ندارد.</p>
+        </div>
+
+        <div class="row">
+
+            @if (Model.Product.Count != 0)
+            {
+                @foreach (var Product in Model.Product)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-product-box">
+                            <div class="product-image">
+                                <a href="#">
+                                    <img src="/Files/FileProducts/@Product.Id/@(Product.Id).png" alt="ProductImage">
+                                    <img src="/Files/FileProducts/@Product.Id/@(Product.Id).png" alt="ProductImage">
+                                </a>
+
+                                <a href="#" class="add-to-cart-btn">مشاهده جزئیات بیشتر <i class="bx bx-detail"></i></a>
+                            </div>
+
+                            <div class="product-content ">
+                                <h3><a href="javascript:void(0)">@Product.Name</a></h3>
+                                <div class="price">
+                                    <span class="new">@Product.Price تومان</span>
+                                </div>
+                            </div>
+                            <div class="single-pricing-table">
+
+                                @{
+                                    string[] Propertys = Product.Propertys.Split("\n");
+                                }
+
+                                <ul class="pricing-features">
+
+                                    <li>
+                                        <i class='bx bx-badge-check @((Product.IsNew) == true ? "text-success" : "text-danger")'></i>
+                                        وضعیت:
+                                        @((Product.IsNew) == true ? "نو" : "دست دوم")
+                                    </li>
+
+                                    @foreach (var property in Propertys)
+                                    {
+                                        <li>
+                                            <i class='bx bx-badge-check'></i>
+                                            @property
+                                        </li>
+                                    }
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="section-title">
+                    <p class="MyPNot">کالایی برای نمایش وجود ندارد وجود ندارد</p>
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <!-- Shape Images -->
+    <div class="shape-img2"><img src="UserTamplate/img/shape/2.svg" alt="image"></div>
+    <div class="shape-img3"><img src="UserTamplate/img/shape/3.svg" alt="image"></div>
+    <div class="shape-img4"><img src="UserTamplate/img/shape/4.png" alt="image"></div>
+    <div class="shape-img5"><img src="UserTamplate/img/shape/5.png" alt="image"></div>
+    <div class="shape-img6"><img src="UserTamplate/img/shape/6.png" alt="image"></div>
+    <div class="shape-img9"><img src="UserTamplate/img/shape/9.png" alt="image"></div>
+    <div class="shape-img10"><img src="UserTamplate/img/shape/10.png" alt="image"></div>
+</section>
+<!-- End Pricing Area -->
+<!-- About Us -->
+<section class="choose-area-two pb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="choose-content">
+                    <div class="section-title text-left">
+                        <span class="sub-title">درباره ما</span>
+                        <h2>@Model.About.Title</h2>
+
+                        <p>@Model.About.Description</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="choose-image">
+                    <img src="/Files/AboutImage.png" alt="AboutImage">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Us -->
+<!-- Start FAQ Area -->
+<section class="faq-area ptb-100 bg-f4f7fe">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">سوالات متداول</span>
+            <h2>مهمترین سوالات متداول</h2>
+            <p>ما اعتقاد داریم تعامل برند کلید ارتباطات است. نوآوری واقعی و تجربه مثبت مشتری قلب ارتباطات موفق است.</p>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="faq-img pr-3">
+                    <img src="/Files/Question.png" alt="QuestionImage">
+                </div>
+            </div>
+
+            @if (Model.Questions.Count != 0)
+            {
+                <div class="col-lg-6">
+                    <div class="faq-accordion">
+                        <ul class="accordion">
+                            @foreach (var question in Model.Questions)
+                            {
+
+
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class="fas fa-plus"></i>
+                                        @question.Questions
+                                    </a>
+
+                                    <p class="accordion-content">@question.Response</p>
+                                </li>
+
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="section-title">
+                    <p class="MyPNot">پرسشی برای نمایش وجود ندارد وجود ندارد</p>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- End FAQ Area -->
+<!-- Start Partner Area -->
+<section class="partner-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">مشتریان</span>
+            <h2>مشتریان عزیز ما</h2>
+            <p>ما اعتقاد داریم تعامل برند کلید ارتباطات است. نوآوری واقعی و تجربه مثبت مشتری قلب ارتباطات موفق است. ما اعتقاد داریم تعامل برند کلید ارتباطات است.</p>
+        </div>
+
+        <div class="row align-items-center">
+
+            @{
+                FileInfo BrandFileinfo;
+                string Brandurl = "";
+                int CountBrand = 0;
+                string BranddirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileBrands");
+                if (!Directory.Exists(BranddirectoryPath))
+                {
+                    Directory.CreateDirectory(BranddirectoryPath);
+                }
+                foreach (string filename in Directory.GetFiles(BranddirectoryPath))
+                {
+                    CountBrand++;
+                    BrandFileinfo = new FileInfo(filename);
+                    Brandurl = "/Files/FileBrands/" + System.IO.Path.GetFileName(BrandFileinfo.FullName);
+
+                    <div class="single-partner-item">
+                        <a href="javascript:void(0)">
+                            <img src="@Brandurl" alt="BrandImage">
+                            <img src="@Brandurl" alt="BrandImage">
+                        </a>
+                    </div>
+
+                }
+
+                if (CountBrand == 0)
+                {
+                    <div class="section-title">
+                        <p class="MyPNot">برندی برای نمایش وجود ندارد وجود ندارد</p>
+                    </div>
+                }
+
+            }
+        </div>
+    </div>
+
+    <div class="shape-img2"><img src="UserTamplate/img/shape/2.svg" alt="image"></div>
+    <div class="shape-img3"><img src="UserTamplate/img/shape/3.svg" alt="image"></div>
+    <div class="shape-img4"><img src="UserTamplate/img/shape/4.png" alt="image"></div>
+    <div class="shape-img5"><img src="UserTamplate/img/shape/5.png" alt="image"></div>
+</section>
+<!-- End Partner Area -->
+@section ButtonPage
+    {
+    <div class=" modal fade " id="MyModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 id="MyModalTitle" class="modal-title"></h6>
+                    <a onclick="CloseModal()" title="بستن"><i style="font-size: 25px" class="text-danger bx bx-x-circle"></i></a>
+                </div>
+
+                <div class="modal-body">
+                    <div id="MyModalDiv">
+                    </div>
+                    <div class="modal-footer">
+                        <a onclick="CloseModal()" class="text-white btn btn-danger">بستن</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        //Modal
+
+            function CloseModal() {
+                $("#MyModal").modal("hide");
+            }
+
+        function ShowModal(data, title) {
+
+            $("#MyModalDiv").html(data);
+            $("#MyModalTitle").text(title);
+            $("#MyModal").modal("show");
+        }
+        
+        //Modal Service
+        function ModalService (idService) {
+            $.ajax({
+                type: "post",
+                url: "/detail/service/"+idService,
+            }).done(function (result) {
+                ShowModal(result, "جزئیات سرویس و ثبت درخواست")
+            });
+        }
+
+    </script>
+
+
+}
+

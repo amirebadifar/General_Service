@@ -1,0 +1,97 @@
+﻿@model List<DataLayer.Table.ProductTable>
+@{
+    ViewBag.Title = "فروشگاه";
+}
+
+
+                        
+<!-- Start Shop Area -->
+<section class="shop-area ptb-100">
+    <div class="container">
+        <div class="woocommerce-topbar">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7 col-sm-6">
+                    <div class="woocommerce-result-count">
+                        <p>نمایش 1-8 از 14 نتیجه</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-5 col-sm-6">
+                    <div class="woocommerce-topbar-ordering">
+                        <select>
+                            <option value="1">مرتب سازی پیش فرض</option>
+                            <option value="2">بر اساس محبوبیت</option>
+                            <option value="0">بر اساس امتیاز</option>
+                            <option value="3">بر اساس جدیدترین</option>
+                            <option value="4">بر اساس قیمت (پایین به بالا)</option>
+                            <option value="5">بر اساس قیمت (بالا به پایین)</option>
+                            <option value="6">بر اساس جدیدترین ها</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            @if (Model.Count != 0)
+            {
+                @foreach (var Product in Model)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-product-box">
+                            <div class="product-image">
+                                <a href="#">
+                                    <img src="/Files/FileProducts/@Product.Id/@(Product.Id).png" alt="ProductImage">
+                                    <img src="/Files/FileProducts/@Product.Id/@(Product.Id).png" alt="ProductImage">
+                                </a>
+
+                                <a href="#" class="add-to-cart-btn">مشاهده جزئیات بیشتر <i class="bx bx-detail"></i></a>
+                            </div>
+
+                            <div class="product-content ">
+                                <h3><a href="javascript:void(0)">@Product.Name</a></h3>
+                                <div class="price">
+                                    <span class="new">@Product.Price تومان</span>
+                                </div>
+                            </div>
+                            <div class="single-pricing-table">
+
+                                @{
+                                    string[] Propertys = Product.Propertys.Split("\n");
+                                }
+
+                                <ul class="pricing-features">
+
+                                    <li>
+                                        <i class='bx bx-badge-check @((Product.IsNew) == true ? "text-success" : "text-danger")'></i>
+                                        وضعیت:
+                                        @((Product.IsNew) == true ? "نو" : "دست دوم")
+                                    </li>
+
+                                    @foreach (var property in Propertys)
+                                    {
+                                        <li>
+                                            <i class='bx bx-badge-check'></i>
+                                            @property
+                                        </li>
+                                    }
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="section-title">
+                    <p class="MyPNot">کالایی برای نمایش وجود ندارد وجود ندارد</p>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- End Shop Area -->
+

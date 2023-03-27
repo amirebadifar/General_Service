@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="fa">
+<head>
+    <partial name="PartUserLayout/_StylePartUserLayout" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="shadow"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- Start Navbar Area -->
+    <partial name="PartUserLayout/_HeaderPartUserLayout" />
+    <!-- End Navbar Area -->
+    <!-- Sidebar Modal -->
+    <partial name="PartUserLayout/_MenuPartUserLayout" />
+    <!-- End Sidebar Modal -->
+    @RenderBody()
+
+    <!-- Start Footer Area -->
+    <partial name="PartUserLayout/_FooterPartUserLayout" />
+    <!-- End Footer Area -->
+
+    <div class="go-top"><i class="fas fa-chevron-up"></i></div>
+
+    <partial name="PartUserLayout/_ScriptPartUserLayout" />
+
+    <script src="\jquery.validate.min.js"></script>
+    <script src="\jquery.validate.unobtrusive.min.js"></script>
+
+    @await RenderSectionAsync("ButtonPage",false)
+
+</body>
+
+</html>

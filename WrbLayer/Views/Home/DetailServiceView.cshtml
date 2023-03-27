@@ -1,0 +1,94 @@
+﻿@using CoreLayer.ViewModel
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model DataLayer.Table.ServiceTable
+@{
+    Layout = null;
+}
+
+
+<br />
+
+<div style="padding: 15px 30px 5px 30px" class="col-12 row">
+    <div class="col-md-4">
+        <img src="/Files/FileService/@Model.Id/@(Model.Id).png" style="width: 250px" alt="ServiceImage">
+    </div>
+    <div class="col-md-8">
+        @*slider*@
+
+        <div class="slideshow-container">
+
+            @{
+                FileInfo ServiceImageFileinfo;
+                string ServiceImageurl = "";
+                int CountServiceImage = 0;
+                int CountButtonImage = 0;
+                string ServiceImagedirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileService", Model.Id.ToString(), "Gallery");
+                if (!Directory.Exists(ServiceImagedirectoryPath))
+                {
+                    Directory.CreateDirectory(ServiceImagedirectoryPath);
+                }
+                foreach (string filename in Directory.GetFiles(ServiceImagedirectoryPath))
+                {
+                    CountServiceImage++;
+                    ServiceImageFileinfo = new FileInfo(filename);
+                    ServiceImageurl = "/Files/FileService/" + Model.Id.ToString() + "/Gallery/" + System.IO.Path.GetFileName(ServiceImageFileinfo.FullName);
+
+                    <div class="mySlides fadeS">
+                        <img src="@ServiceImageurl" style="width:250px">
+                    </div>
+
+                }
+
+                if (CountServiceImage == 0)
+                {
+                    <div class="section-title">
+                        <p style="margin-top: 156px;" class="MyPNot">گالری برای نمایش وجود ندارد وجود ندارد</p>
+                    </div>
+                }
+                else
+                {
+                    <div style="text-align:center">
+                        @foreach (string filename in Directory.GetFiles(ServiceImagedirectoryPath))
+                        {
+                            CountButtonImage++;
+
+
+                            <span class="dot" onclick="currentSlide(@CountButtonImage)"></span>
+
+                        }
+                    </div>
+                }
+
+            }
+
+
+
+
+        </div>
+        <br>
+
+
+
+
+        @*slider*@
+    </div>
+</div>
+
+<section class="services-details-area ptb-100">
+    <div class="container">
+        <div class="services-details-overview">
+            <div class="services-details-desc">
+                <h3>@Model.Title</h3>
+                <p>@Model.Descripton</p>
+            </div>
+
+            <div class="services-details-image wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <partial name="PartialView/InsertServicePartial" model="new InsertServicePartialViewModel(){ServiceId = Model.Id}" />
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="/FilesSlider/SliderScript.js"></script>
+<link rel="stylesheet" href="/FilesSlider/SliderStyle.css" />
