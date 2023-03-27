@@ -5,61 +5,60 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebLayer
 build_property.RootNamespace = WebLayer
-build_property.ProjectDir = E:\Projects\Asp Net Core\Jeneral_Service\WrbLayer\
+build_property.ProjectDir = E:\Projects\Asp Net Core\General_Service\WrbLayer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Projects\Asp Net Core\Jeneral_Service\WrbLayer
+build_property.MSBuildProjectDirectory = E:\Projects\Asp Net Core\General_Service\WrbLayer
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Home/DetailServiceView.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/DetailServiceView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxTZXJ2aWNlVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Home/IndexView.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/IndexView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Home/ProductView.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/ProductView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0Vmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Shared/PartialView/InsertServicePartial.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Shared/PartialView/InsertServicePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3XEluc2VydFNlcnZpY2VQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Shared/PartUserLayout/_FooterPartUserLayout.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Shared/PartUserLayout/_FooterPartUserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRVc2VyTGF5b3V0XF9Gb290ZXJQYXJ0VXNlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Shared/PartUserLayout/_HeaderPartUserLayout.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Shared/PartUserLayout/_HeaderPartUserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRVc2VyTGF5b3V0XF9IZWFkZXJQYXJ0VXNlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Shared/PartUserLayout/_MenuPartUserLayout.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Shared/PartUserLayout/_MenuPartUserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRVc2VyTGF5b3V0XF9NZW51UGFydFVzZXJMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Shared/PartUserLayout/_ScriptPartUserLayout.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Shared/PartUserLayout/_ScriptPartUserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRVc2VyTGF5b3V0XF9TY3JpcHRQYXJ0VXNlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Shared/PartUserLayout/_StylePartUserLayout.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Shared/PartUserLayout/_StylePartUserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRVc2VyTGF5b3V0XF9TdHlsZVBhcnRVc2VyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/Shared/_UserLayout.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Shared/_UserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/_ViewImports.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/Asp Net Core/Jeneral_Service/WrbLayer/Views/_ViewStart.cshtml]
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,5 +1,4 @@
-﻿@using CoreLayer.Helpers
-@model CoreLayer.ViewModel.IndexViewModel
+﻿@model CoreLayer.ViewModel.IndexViewModel
 @{
     ViewBag.Title = "خانه";
 }
@@ -120,7 +119,7 @@
 
                             <div class="content">
                                 <span>
-                                    <a href="#"> تاریخ انجام: @FixedTextHelper.FixedDateTime(workSample.CreateTime)</a>
+                                    <a href="#"> تاریخ انجام: @workSample.CreateTime.FixedDateTime()</a>
                                 </span>
                                 <h3>
                                     <a href="#">@workSample.Title</a>
@@ -174,7 +173,7 @@
                             <div class="product-content ">
                                 <h3><a href="javascript:void(0)">@Product.Name</a></h3>
                                 <div class="price">
-                                    <span class="new">@Product.Price تومان</span>
+                                    <span class="new">@Product.Price.ToString().FixedPrice() تومان</span>
                                 </div>
                             </div>
                             <div class="single-pricing-table">
