@@ -3,34 +3,31 @@
     ViewBag.Title = "فروشگاه";
 }
 
-
-                        
+<style>
+    .navbar-area-two {
+        background-color: black !important
+    }
+</style>
+<br>                  
 <!-- Start Shop Area -->
 <section class="shop-area ptb-100">
     <div class="container">
-        <div class="woocommerce-topbar">
-            <div class="row align-items-center">
-                <div class="col-lg-8 col-md-7 col-sm-6">
-                    <div class="woocommerce-result-count">
-                        <p>نمایش 1-8 از 14 نتیجه</p>
+        <form asp-action="Product" method="get">
+            <div class="woocommerce-topbar">
+                <div class="row col-12 align-items-center">
+                    <div class="col-8">
+                        <div class="woocommerce-topbar-ordering">
+                            <input name="productName" type="text" value="@ViewBag.productName" class="form-control" placeholder="لطفا نام کالا را وارد کنید">
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-5 col-sm-6">
-                    <div class="woocommerce-topbar-ordering">
-                        <select>
-                            <option value="1">مرتب سازی پیش فرض</option>
-                            <option value="2">بر اساس محبوبیت</option>
-                            <option value="0">بر اساس امتیاز</option>
-                            <option value="3">بر اساس جدیدترین</option>
-                            <option value="4">بر اساس قیمت (پایین به بالا)</option>
-                            <option value="5">بر اساس قیمت (بالا به پایین)</option>
-                            <option value="6">بر اساس جدیدترین ها</option>
-                        </select>
+                    <div class="col-4">
+                        <div class="woocommerce-topbar-ordering">
+                            <button class="btn btn-success text-white">جستجو</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
 
         <div class="row">
 

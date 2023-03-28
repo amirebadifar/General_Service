@@ -1,0 +1,47 @@
+﻿@model CoreLayer.ViewModel.InsertProductPartialViewmodel
+@{
+    Layout = null;
+}
+<div class="container">
+    <div style="margin-top:0" class="form-content">
+        <div class="form-header">
+            <h3>ثبت درخواست</h3>
+            <p>برای ثبت درخواست فرم زیر را پر کنید و کلید ثبت درخواست را بزنید</p>
+        </div>
+
+        <form asp-action="InsertProduct">
+            <div class="form-group">
+                <label asp-for="FullName"></label>
+                <input asp-for="FullName" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberPhone"></label>
+                <input asp-for="NumberPhone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberHome"></label>
+                <input asp-for="NumberHome" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Addres"></label>
+                <textarea asp-for="Addres" class="form-control"></textarea>
+            </div>
+            
+            <div class="col-12">
+                
+            </div>
+
+            <input type="hidden" asp-for="IdProduct">
+            <input style="visibility: hidden" value="" asp-for="Addres_X">
+            <input type="hidden" asp-for="Addres_Y">
+
+            <button type="submit" class="default-btn">ثبت درخواست</button>
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+        </form>
+    </div>
+</div>
+
+<script src="\jquery.validate.min.js"></script>
+<script src="\jquery.validate.unobtrusive.min.js"></script>

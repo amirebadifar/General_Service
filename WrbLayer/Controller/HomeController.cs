@@ -40,10 +40,18 @@ namespace WebLayer.Controller
             return View("IndexView",modelView);
         }
 
-        [Route("/product/{nameProduct?}")]
-        public async Task<IActionResult> Product(string? nameProduct)
+        [Route("/product")]
+        public async Task<IActionResult> Product()
         {
-            return View("ProductView",await _productService.GetAllProductAsync());
+            string nameProduct = Request.Query["productName"]!;
+
+            var Products = (((nameProduct) == null
+                ? await _productService.GetAllProductAsync()
+                : await _productService.GetProductByNameAsync(nameProduct)));
+
+            ViewBag.productName = nameProduct!;
+
+            return View("ProductView",Products);
         }
 
 
@@ -102,7 +110,6 @@ namespace WebLayer.Controller
             });
         }
         
-
         #endregion
 
     }
