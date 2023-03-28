@@ -23,7 +23,7 @@ namespace WebLayer.Controller
         }
 
         [Route("/")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Message)
         {
             var modelView = new IndexViewModel()
             {
@@ -34,6 +34,8 @@ namespace WebLayer.Controller
                 GalleryService = await _serviceService.GetGalleryServiceAsync(),
                 Product = await _productService.GetNewProductAsync(),
             };
+            
+            ViewBag.Message = Message;
 
             return View("IndexView",modelView);
         }
@@ -44,6 +46,8 @@ namespace WebLayer.Controller
             return View("ProductView",await _productService.GetAllProductAsync());
         }
 
+
+        #region Detsils
 
         [Route("/detail/service/{idService}")]
         public IActionResult DetailService(int idService)
@@ -71,6 +75,35 @@ namespace WebLayer.Controller
             return View("DetailProductView", Product);
 
         }
+
+        #endregion
+
+        #region Inserts
+
+        [HttpPost("/insert/service")]
+        public async Task<IActionResult> InsertService(InsertServicePartialViewModel model)
+        {
+            await _serviceService.AddServiceAsync(model);
+            
+            return RedirectToAction("Index",new
+            {
+                Message = "OkInsert"
+            });
+        }
+        
+        [HttpPost("/insert/product")]
+        public async Task<IActionResult> InsertProduct(InsertProductPartialViewmodel model)
+        {
+            await _productService.AddProductAsync(model);
+            
+            return RedirectToAction("Index",new
+            {
+                Message = "OkInsert"
+            });
+        }
+        
+
+        #endregion
 
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dAMy7RaDvwS0yPwpQ/qtRDbkxJJsde+BA8Q326wwD2o=",
+  "Hash": "Wk/uCxvB+ehR7XjQbYwnQZIfq0qDQkelpHVdOY1i83o=",
   "Source": "WebLayer",
   "BasePath": "_content/WebLayer",
   "Mode": "Default",
@@ -23596,12 +23596,12 @@
       "OriginalItemSpec": "wwwroot\\Files\\FileService\\1\\Gallery\\why-choose-img1.png"
     },
     {
-      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\2\\2.png",
+      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\1\\1.png",
       "SourceId": "WebLayer",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\",
       "BasePath": "_content/WebLayer",
-      "RelativePath": "Files/FileWorkSamples/2/2.png",
+      "RelativePath": "Files/FileWorkSamples/1/1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -23610,7 +23610,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Files\\FileWorkSamples\\2\\2.png"
+      "OriginalItemSpec": "wwwroot\\Files\\FileWorkSamples\\1\\1.png"
+    },
+    {
+      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\1\\Gallery\\2 - Copy.png",
+      "SourceId": "WebLayer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\",
+      "BasePath": "_content/WebLayer",
+      "RelativePath": "Files/FileWorkSamples/1/Gallery/2 - Copy.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\FileWorkSamples\\1\\Gallery\\2 - Copy.png"
+    },
+    {
+      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\1\\Gallery\\2.png",
+      "SourceId": "WebLayer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\",
+      "BasePath": "_content/WebLayer",
+      "RelativePath": "Files/FileWorkSamples/1/Gallery/2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\FileWorkSamples\\1\\Gallery\\2.png"
     },
     {
       "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\Question.png",

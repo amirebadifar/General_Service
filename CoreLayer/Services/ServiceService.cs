@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoreLayer.ViewModel;
 using DataLayer;
 using DataLayer.Table;
+using FixedTextHelper;
 
 namespace CoreLayer.Services
 {
@@ -13,6 +15,7 @@ namespace CoreLayer.Services
         Task<List<ServiceTable>> GetAllServiceAsync();
         Task<List<ServiceTable>> GetGalleryServiceAsync();
         Task<ServiceTable> GetServiceAsync(int idService);
+        Task<int> AddServiceAsync(InsertServicePartialViewModel model);
     }
 
     public class ServiceService : IServiceService
@@ -21,8 +24,8 @@ namespace CoreLayer.Services
 
         public ServiceService(DB_Context context)
         {
-            _context = context; 
-        }  
+            _context = context;
+        }
 
         public async Task<List<ServiceTable>> GetAllServiceAsync()
         {
@@ -37,6 +40,26 @@ namespace CoreLayer.Services
         public async Task<ServiceTable> GetServiceAsync(int idService)
         {
             return _context.Services.SingleOrDefault(s => s.Id == idService)!;
+        }
+
+        public async Task<int> AddServiceAsync(InsertServicePartialViewModel model)
+        {
+            var table = new InsertServiceTable()
+            {
+                FullName = model.FullName,
+                Addres = model.Addres,
+                NumberHome = model.NumberHome,
+                NumberPhone = model.NumberPhone,
+                ServiceId = model.ServiceId,
+                Addres_X = model.Addres_X,
+                Addres_Y = model.Addres_Y,
+                CreateTime = DateTime.Now
+            };
+
+            await _context.InsertServices.AddAsync(table);
+            int Id = await _context.SaveChangesAsync();
+
+            return Id;
         }
     }
 }

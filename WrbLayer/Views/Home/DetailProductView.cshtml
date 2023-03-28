@@ -1,4 +1,6 @@
-﻿@model DataLayer.Table.ProductTable
+﻿@using CoreLayer.ViewModel
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model DataLayer.Table.ProductTable
 @{
     Layout = null;
 }
@@ -7,7 +9,7 @@
 
 <div style="padding: 15px 30px 5px 30px" class="col-12 row">
     <div class="col-md-4">
-        <img src="/Files/FileProducts/@Model.Id/@(Model.Id).png" style="width: 250px" alt="ProductImage">
+        <img src="/Files/FileProduct/@Model.Id/@(Model.Id).png" style="width: 250px" alt="ProductImage">
     </div>
     <div class="col-md-8">
         @*slider*@
@@ -19,7 +21,7 @@
                 string ProductImageurl = "";
                 int CountProductImage = 0;
                 int CountButtonImage = 0;
-                string ProductImagedirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileProducts", Model.Id.ToString(), "Gallery");
+                string ProductImagedirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileProduct", Model.Id.ToString(), "Gallery");
                 if (!Directory.Exists(ProductImagedirectoryPath))
                 {
                     Directory.CreateDirectory(ProductImagedirectoryPath);
@@ -28,7 +30,7 @@
                 {
                     CountProductImage++;
                     ProductImageFileinfo = new FileInfo(filename);
-                    ProductImageurl = "/Files/FileProducts/" + Model.Id.ToString() + "/Gallery/" + System.IO.Path.GetFileName(ProductImageFileinfo.FullName);
+                    ProductImageurl = "/Files/FileProduct/" + Model.Id.ToString() + "/Gallery/" + System.IO.Path.GetFileName(ProductImageFileinfo.FullName);
 
                     <div class="mySlides fadeS">
                         <img src="@ProductImageurl" style="width:250px">
@@ -73,8 +75,8 @@
 
 <section class="Products-details-area ptb-100">
     <div class="container">
-        <div class="Products-details-overview">
-            <div class="Products-details-desc">
+        <div class="Products-details-overview row">
+            <div class="Products-details-desc col-md-6">
                 <h3>@Model.Name</h3>
                 <div class="single-pricing-table">
 
@@ -102,8 +104,9 @@
                 </div>
             </div>
 
-            <div class="Products-details-image wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                //
+            <div class="Products-details-image wow fadeInUp col-md-6" style="visibility: visible; animation-name: fadeInUp;">
+                <partial name="PartialView/InsertServicePartial" model="new InsertServicePartialViewModel(){ServiceId = Model.Id}" />
+
             </div>
         </div>
 

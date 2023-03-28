@@ -5557,8 +5557,16 @@
       "PackagePath": "staticwebassets\\Files\\FileService\\1\\Gallery\\why-choose-img1.png"
     },
     {
-      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\2\\2.png",
-      "PackagePath": "staticwebassets\\Files\\FileWorkSamples\\2\\2.png"
+      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\1\\1.png",
+      "PackagePath": "staticwebassets\\Files\\FileWorkSamples\\1\\1.png"
+    },
+    {
+      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\1\\Gallery\\2 - Copy.png",
+      "PackagePath": "staticwebassets\\Files\\FileWorkSamples\\1\\Gallery\\2 - Copy.png"
+    },
+    {
+      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileWorkSamples\\1\\Gallery\\2.png",
+      "PackagePath": "staticwebassets\\Files\\FileWorkSamples\\1\\Gallery\\2.png"
     },
     {
       "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\Question.png",
