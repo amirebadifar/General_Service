@@ -22,7 +22,7 @@
     @RenderBody()
 
     <!-- Start Footer Area -->
-    <partial name="PartUserLayout/_FooterPartUserLayout" />
+    @await Component.InvokeAsync("FooterComponent")
     <!-- End Footer Area -->
 
     <div class="go-top"><i class="fas fa-chevron-up"></i></div>

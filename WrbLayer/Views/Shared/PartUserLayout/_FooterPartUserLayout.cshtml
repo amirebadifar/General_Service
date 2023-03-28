@@ -1,4 +1,5 @@
-﻿<section class="footer-area">
+﻿@model DataLayer.Table.ContactTable
+<section class="footer-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -8,106 +9,57 @@
                     <ul class="footer-contact-info">
                         <li>
                             <i class="flaticon-phone-call"></i>
-                            <span>دوشنبه تا جمعه: 10:00 صبح تا 6 بعد از ظهر</span>
-                            <a href="#">+123 54214 578 52</a>
+                            <span>@Model.ResponseTime</span>
+                            <a href="javascript:void(0)">@Model.Numberphone</a>
                         </li>
                         <li>
-                            <i class="flaticon-email"></i>
-                            <span>آیا سوالی دارید؟</span>
-                            <a href="#">YourSite@Site.Com</a>
+                            <i class="fa fa-location-arrow"></i>
+                            <a href="javascript:void(0)">آدرس:</a>
+                            <span>@Model.Addres</span>
                         </li>
-                        <li>
-                            <i class="flaticon-social-media"></i>
-                            <span>شبکه اجتماعی</span>
 
-                            <ul class="social">
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>نقشه</h3>
+
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fa fa-search-location"></i>
+                            <div class="col-12">
+                                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+                                      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+                                      crossorigin="" />
+                                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                                        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                                        crossorigin=""></script>
+
+
+                                <div id="mapid" style="height: 300px;"></div>
+                                <script>
+                                    var mymap = L.map('mapid').setView([31.58358, 54.44613], 13);
+                                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                        minZoom: 5,
+                                        maxZoom: 19,
+                                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                                    }).addTo(mymap);
+                                    var marker = L.marker([@Model.Addres_X, @Model.Addres_Y]).addTo(mymap);
+                                    marker.bindPopup("<p style='font-size: 12px'><b>ما اینجا هستیم</b></p>").openPopup();
+
+
+                                </script>
+
+
+
+                            </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-footer-widget pr-5">
-                    <h3>پیوندهای سریع</h3>
-
-                    <ul class="footer-quick-links">
-                        <li><a href="#">صفحه اصلی</a></li>
-                        <li><a href="#">درباره ما</a></li>
-                        <li><a href="#">وبلاگ</a></li>
-                        <li><a href="#">تماس با ما</a></li>
-                        <li><a href="#">هزینه آژانس</a></li>
-                        <li><a href="#">تحول دیجیتال</a></li>
-                        <li><a href="#">پشتیبانی در جهان</a></li>
-                        <li><a href="#">بازاریابی</a></li>
-                        <li><a href="#">هزینه آژانس</a></li>
-                        <li><a href="#">تحول دیجیتال</a></li>
-                        <li><a href="#">پشتیبانی</a></li>
-                        <li><a href="#">تجارت دیجیتال</a></li>
-                        <li><a href="#">مشتریان</a></li>
-                        <li><a href="#">واحد فنی</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-0 offset-md-3 offset-sm-3">
-                <div class="single-footer-widget pr-5">
-                    <h3>اینستاگرام</h3>
-
-                    <ul class="footer-instagram-post">
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/1.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/2.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/3.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/4.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/5.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/6.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/7.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/8.jpg" alt="image">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="UserTamplate/img/instagram-image/1.jpg" alt="image">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
 
         <div class="copyright-area">

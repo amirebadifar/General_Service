@@ -12,6 +12,7 @@ namespace CoreLayer.Services
     public interface IProductService
     {
         Task<List<ProductTable>> GetAllProductAsync();
+        Task<List<ProductTable>> GetProductByNameAsync(string nameProduct);
         Task<List<ProductTable>> GetNewProductAsync();
         Task<ProductTable> GetProductAsync(int id);
         Task<int> AddProductAsync(InsertProductPartialViewmodel product);
@@ -29,6 +30,11 @@ namespace CoreLayer.Services
         public async Task<List<ProductTable>> GetAllProductAsync()
         {
             return _context.Products.ToList();
+        }
+
+        public async Task<List<ProductTable>> GetProductByNameAsync(string nameProduct)
+        {
+            return _context.Products.Where(p => p.Name.Contains(nameProduct)).ToList();
         }
 
         public async Task<List<ProductTable>> GetNewProductAsync()

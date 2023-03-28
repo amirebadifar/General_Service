@@ -38,6 +38,7 @@ builder.Services.AddTransient<IServiceService, ServiceService>();
 builder.Services.AddTransient<IWorkSampleService, WorkSampleService>();
 builder.Services.AddTransient<IQuestionService, QuestionService>();
 builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IContactService, ContactService>();
 
 #endregion
 

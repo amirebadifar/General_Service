@@ -52,6 +52,16 @@
 
 
     }
+    
+    @if (Model.GalleryService.Count == 0)
+    {
+        <style>
+            .navbar-area-two {
+                background-color: black!important
+            }
+        </style>
+    }
+
 </div>
 <!-- End Main Banner Area -->
 <!-- Ml Services Area -->
@@ -151,6 +161,7 @@
         <div class="section-title">
             <h2>برنامه قیمت گذاری ما</h2>
             <p>نوآوری های واقعی و تجربه مثبت مشتری ، هسته اصلی ارتباط موفق است. محصولات و خدمات جعلی وجود ندارد.</p>
+            <a asp-action="Product" class="btn btn-sm btn-success text-white">مشاهده بیشتر</a>
         </div>
 
         <div class="row">
@@ -222,6 +233,9 @@
     <div class="shape-img6"><img src="UserTamplate/img/shape/6.png" alt="image"></div>
     <div class="shape-img9"><img src="UserTamplate/img/shape/9.png" alt="image"></div>
     <div class="shape-img10"><img src="UserTamplate/img/shape/10.png" alt="image"></div>
+    
+   
+
 </section>
 <!-- End Pricing Area -->
 <!-- About Us -->
