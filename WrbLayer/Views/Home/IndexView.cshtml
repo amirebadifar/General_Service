@@ -24,7 +24,7 @@
                                     <p>@((galleryService.Descripton.Length) > 500 ? galleryService.Descripton.Substring(0, 499) + " ..." : galleryService.Descripton)</p>
 
                                     <div class="banner-btn">
-                                        <a href="#" class="default-btn mr-4">
+                                        <a href="javascript:void(0)" onclick="ModalService('@galleryService.Id')" class="default-btn mr-4">
                                             مشاهده بیشتر و درخواست <span></span>
                                         </a>
 
@@ -125,11 +125,11 @@
                                     <a href="#">@workSample.Title</a>
                                 </h3>
 
-                                <a class="btn btn-outline-info" href="#">مشاهده بیشتر</a>
+                                <a class="btn btn-outline-info" onclick="ModalWorkSample('@workSample.Id')" href="javascript:void(0)">مشاهده بیشتر</a>
                             </div>
                         </div>
                     </div>
-
+                    
                 }
             </div>
         }
@@ -167,7 +167,7 @@
                                     <img src="/Files/FileProducts/@Product.Id/@(Product.Id).png" alt="ProductImage">
                                 </a>
 
-                                <a href="#" class="add-to-cart-btn">مشاهده جزئیات بیشتر <i class="bx bx-detail"></i></a>
+                                <a onclick="ModalProduct('@Product.Id')" href="javascript:void(0)" class="add-to-cart-btn">مشاهده جزئیات بیشتر <i class="bx bx-detail"></i></a>
                             </div>
 
                             <div class="product-content ">
@@ -396,6 +396,24 @@
                 url: "/detail/service/"+idService,
             }).done(function (result) {
                 ShowModal(result, "جزئیات سرویس و ثبت درخواست")
+            });
+        }
+
+        function ModalWorkSample(idWorkSample) {
+            $.ajax({
+                type: "post",
+                url: "/detail/worksample/" + idWorkSample,
+            }).done(function (result) {
+                ShowModal(result, "جزئیات نمونه کار")
+            });
+        }
+
+        function ModalProduct(idProduct) {
+            $.ajax({
+                type: "post",
+                url: "/detail/product/" + idProduct,
+            }).done(function (result) {
+                ShowModal(result, "جزئیات کالا و ثبت درخواست")
             });
         }
 

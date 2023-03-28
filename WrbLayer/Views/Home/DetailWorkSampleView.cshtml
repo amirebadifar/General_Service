@@ -1,0 +1,91 @@
+﻿@model DataLayer.Table.WorkSampleTable
+@{
+    Layout = null;
+}
+
+
+<br />
+
+<div style="padding: 15px 30px 5px 30px" class="col-12 row">
+    <div class="col-md-4">
+        <img src="/Files/FileWorkSamples/@Model.Id/@(Model.Id).png" style="width: 250px" alt="WorkSampleImage">
+    </div>
+    <div class="col-md-8">
+        @*slider*@
+
+        <div class="slideshow-container">
+
+            @{
+                FileInfo WorkSampleImageFileinfo;
+                string WorkSampleImageurl = "";
+                int CountWorkSampleImage = 0;
+                int CountButtonImage = 0;
+                string WorkSampleImagedirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileWorkSamples", Model.Id.ToString(), "Gallery");
+                if (!Directory.Exists(WorkSampleImagedirectoryPath))
+                {
+                    Directory.CreateDirectory(WorkSampleImagedirectoryPath);
+                }
+                foreach (string filename in Directory.GetFiles(WorkSampleImagedirectoryPath))
+                {
+                    CountWorkSampleImage++;
+                    WorkSampleImageFileinfo = new FileInfo(filename);
+                    WorkSampleImageurl = "/Files/FileWorkSamples/" + Model.Id.ToString() + "/Gallery/" + System.IO.Path.GetFileName(WorkSampleImageFileinfo.FullName);
+
+                    <div class="mySlides fadeS">
+                        <img src="@WorkSampleImageurl" style="width:250px">
+                    </div>
+
+                }
+
+                if (CountWorkSampleImage == 0)
+                {
+                    <div class="section-title">
+                        <p style="margin-top: 156px;" class="MyPNot">گالری برای نمایش وجود ندارد وجود ندارد</p>
+                    </div>
+                }
+                else
+                {
+                    <div style="text-align:center">
+                        @foreach (string filename in Directory.GetFiles(WorkSampleImagedirectoryPath))
+                        {
+                            CountButtonImage++;
+
+
+                            <span class="dot" onclick="currentSlide(@CountButtonImage)"></span>
+
+                        }
+                    </div>
+                }
+
+            }
+
+
+
+
+        </div>
+        <br>
+
+
+
+
+        @*slider*@
+    </div>
+</div>
+
+<section class="WorkSamples-details-area ptb-100">
+    <div class="container">
+        <div class="WorkSamples-details-overview">
+            <div class="WorkSamples-details-desc">
+                <h3>@Model.Title</h3>
+                <p>تاریخ انجام: @Model.CreateTime.FixedDateTime()</p>
+            </div>
+
+            <div class="WorkSamples-details-image wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="/FilesSlider/SliderScript.js"></script>
+<link rel="stylesheet" href="/FilesSlider/SliderStyle.css" />

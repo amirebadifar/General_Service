@@ -11,6 +11,7 @@ namespace CoreLayer.Services
     public interface IWorkSampleService
     {
         Task<List<WorkSampleTable>> GetAllWorkSamplesAsync();
+        Task<WorkSampleTable> GetWorkSamplesAsync(int Id);
     }
 
     public class WorkSampleService : IWorkSampleService
@@ -26,6 +27,11 @@ namespace CoreLayer.Services
         public async Task<List<WorkSampleTable>> GetAllWorkSamplesAsync()
         {
             return _context.WorkSamples.ToList();
+        }
+
+        public async Task<WorkSampleTable> GetWorkSamplesAsync(int Id)
+        {
+            return _context.WorkSamples.SingleOrDefault(w => w.Id == Id)!;
         }
     }
 }

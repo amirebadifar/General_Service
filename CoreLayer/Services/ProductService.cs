@@ -12,6 +12,7 @@ namespace CoreLayer.Services
     {
         Task<List<ProductTable>> GetAllProductAsync();
         Task<List<ProductTable>> GetNewProductAsync();
+        Task<ProductTable> GetProductAsync(int id);
     }
 
     public class ProductService : IProductService
@@ -31,6 +32,11 @@ namespace CoreLayer.Services
         public async Task<List<ProductTable>> GetNewProductAsync()
         {
             return _context.Products.OrderByDescending(p => p.Id).Take(8).ToList();
+        }
+
+        public async Task<ProductTable> GetProductAsync(int id)
+        {
+            return _context.Products.SingleOrDefault(p => p.Id == id)!;
         }
     }
 }

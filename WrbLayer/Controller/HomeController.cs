@@ -53,6 +53,24 @@ namespace WebLayer.Controller
             return View("DetailServiceView", service);
 
         }
+        
+        [Route("/detail/worksample/{idWorkSample}")]
+        public IActionResult DetailWorkSample(int idWorkSample)
+        {
+            var WorkSample = _workSampleService.GetWorkSamplesAsync(idWorkSample).Result;
+
+            return View("DetailWorkSampleView", WorkSample);
+
+        }
+        
+        [Route("/detail/product/{idProduct}")]
+        public IActionResult DetailProduct(int idProduct)
+        {
+            var Product = _productService.GetProductAsync(idProduct).Result;
+
+            return View("DetailProductView", Product);
+
+        }
 
     }
 }

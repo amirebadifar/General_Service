@@ -1,0 +1,114 @@
+﻿@model DataLayer.Table.ProductTable
+@{
+    Layout = null;
+}
+
+<br />
+
+<div style="padding: 15px 30px 5px 30px" class="col-12 row">
+    <div class="col-md-4">
+        <img src="/Files/FileProducts/@Model.Id/@(Model.Id).png" style="width: 250px" alt="ProductImage">
+    </div>
+    <div class="col-md-8">
+        @*slider*@
+
+        <div class="slideshow-container">
+
+            @{
+                FileInfo ProductImageFileinfo;
+                string ProductImageurl = "";
+                int CountProductImage = 0;
+                int CountButtonImage = 0;
+                string ProductImagedirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileProducts", Model.Id.ToString(), "Gallery");
+                if (!Directory.Exists(ProductImagedirectoryPath))
+                {
+                    Directory.CreateDirectory(ProductImagedirectoryPath);
+                }
+                foreach (string filename in Directory.GetFiles(ProductImagedirectoryPath))
+                {
+                    CountProductImage++;
+                    ProductImageFileinfo = new FileInfo(filename);
+                    ProductImageurl = "/Files/FileProducts/" + Model.Id.ToString() + "/Gallery/" + System.IO.Path.GetFileName(ProductImageFileinfo.FullName);
+
+                    <div class="mySlides fadeS">
+                        <img src="@ProductImageurl" style="width:250px">
+                    </div>
+
+                }
+
+                if (CountProductImage == 0)
+                {
+                    <div class="section-title">
+                        <p style="margin-top: 156px;" class="MyPNot">گالری برای نمایش وجود ندارد وجود ندارد</p>
+                    </div>
+                }
+                else
+                {
+                    <div style="text-align:center">
+                        @foreach (string filename in Directory.GetFiles(ProductImagedirectoryPath))
+                        {
+                            CountButtonImage++;
+
+
+                            <span class="dot" onclick="currentSlide(@CountButtonImage)"></span>
+
+                        }
+                    </div>
+                }
+
+            }
+
+
+
+
+        </div>
+        <br>
+
+
+
+
+        @*slider*@
+    </div>
+</div>
+
+<section class="Products-details-area ptb-100">
+    <div class="container">
+        <div class="Products-details-overview">
+            <div class="Products-details-desc">
+                <h3>@Model.Name</h3>
+                <div class="single-pricing-table">
+
+                    @{
+                        string[] Propertys = Model.Propertys.Split("\n");
+                    }
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            <i class='bx bx-badge-check @((Model.IsNew) == true ? "text-success" : "text-danger")'></i>
+                            وضعیت:
+                            @((Model.IsNew) == true ? "نو" : "دست دوم")
+                        </li>
+
+                        @foreach (var property in Propertys)
+                        {
+                            <li>
+                                <i class='bx bx-badge-check'></i>
+                                @property
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="Products-details-image wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                //
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="/FilesSlider/SliderScript.js"></script>
+<link rel="stylesheet" href="/FilesSlider/SliderStyle.css" />

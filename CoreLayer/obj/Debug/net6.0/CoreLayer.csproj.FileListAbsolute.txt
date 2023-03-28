@@ -18,7 +18,6 @@ E:\Projects\Asp Net Core\Jeneral_Service\CoreLayer\obj\Debug\net6.0\CoreLayer.ge
 E:\Projects\Asp Net Core\General_Service\CoreLayer\bin\Debug\net6.0\CoreLayer.deps.json
 E:\Projects\Asp Net Core\General_Service\CoreLayer\bin\Debug\net6.0\CoreLayer.runtimeconfig.json
 E:\Projects\Asp Net Core\General_Service\CoreLayer\bin\Debug\net6.0\CoreLayer.dll
-E:\Projects\Asp Net Core\General_Service\CoreLayer\bin\Debug\net6.0\ref\CoreLayer.dll
 E:\Projects\Asp Net Core\General_Service\CoreLayer\bin\Debug\net6.0\CoreLayer.pdb
 E:\Projects\Asp Net Core\General_Service\CoreLayer\bin\Debug\net6.0\DataLayer.dll
 E:\Projects\Asp Net Core\General_Service\CoreLayer\bin\Debug\net6.0\DataLayer.pdb
@@ -32,3 +31,4 @@ E:\Projects\Asp Net Core\General_Service\CoreLayer\obj\Debug\net6.0\CoreLayer.dl
 E:\Projects\Asp Net Core\General_Service\CoreLayer\obj\Debug\net6.0\ref\CoreLayer.dll
 E:\Projects\Asp Net Core\General_Service\CoreLayer\obj\Debug\net6.0\CoreLayer.pdb
 E:\Projects\Asp Net Core\General_Service\CoreLayer\obj\Debug\net6.0\CoreLayer.genruntimeconfig.cache
+E:\Projects\Asp Net Core\General_Service\CoreLayer\obj\Debug\net6.0\refint\CoreLayer.dll
