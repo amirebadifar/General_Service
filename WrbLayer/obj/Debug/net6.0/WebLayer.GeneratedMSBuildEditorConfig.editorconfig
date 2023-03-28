@@ -5,7 +5,6 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebLayer
 build_property.RootNamespace = WebLayer
@@ -15,6 +14,50 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = E:\Projects\Asp Net Core\General_Service\WrbLayer
 build_property._RazorSourceGeneratorDebug = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Home/AboutView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxBYm91dFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Home/IndexView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/OutherPartAdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxPdXRoZXJQYXJ0QWRtaW5MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/_FooterPartAdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxfRm9vdGVyUGFydEFkbWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/_HeaderPartAdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxfSGVhZGVyUGFydEFkbWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/_MenuPartAdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxfTWVudVBhcnRBZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/_ScriptPartAdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxfU2NyaXB0UGFydEFkbWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/_StylePartAdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxfU3R5bGVQYXJ0QWRtaW5MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/DetailProductView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxQcm9kdWN0Vmlldy5jc2h0bWw=
