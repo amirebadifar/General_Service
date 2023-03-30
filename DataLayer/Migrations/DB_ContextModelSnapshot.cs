@@ -43,6 +43,27 @@ namespace DataLayer.Migrations
                     b.ToTable("About");
                 });
 
+            modelBuilder.Entity("DataLayer.Table.AdminTable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("NumberPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admin");
+                });
+
             modelBuilder.Entity("DataLayer.Table.ContactTable", b =>
                 {
                     b.Property<int>("Id")
@@ -102,6 +123,9 @@ namespace DataLayer.Migrations
                     b.Property<int>("IdProduct")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<string>("NumberHome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -139,6 +163,9 @@ namespace DataLayer.Migrations
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("NumberHome")
                         .IsRequired()

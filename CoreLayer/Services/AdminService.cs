@@ -9,7 +9,7 @@ namespace CoreLayer.Services
 {
     public interface IAdminService
     {
-        Task<bool> IsLogin(string username, string password);
+        Task<bool> IsLogin(string numberphone, string password);
     }
 
     public class AdminService: IAdminService
@@ -21,9 +21,9 @@ namespace CoreLayer.Services
             _context = context;
         }
 
-        public async Task<bool> IsLogin(string username, string password)
+        public async Task<bool> IsLogin(string numberphone, string password)
         {
-            return _context.a
+            return _context.Admin.Any(a => a.NumberPhone == numberphone && a.password == password);
         }
     }
 }

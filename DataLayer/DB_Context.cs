@@ -26,14 +26,17 @@ namespace DataLayer
 
         #endregion
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<InsertServiceTable>()
-        //        .HasQueryFilter(u => !u.);
-            
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<InsertServiceTable>()
+                .HasQueryFilter(u => !u.IsDelete);
 
-        //    base.OnModelCreating(modelBuilder);
-        //}
+            modelBuilder.Entity<InsertProductTable>()
+                .HasQueryFilter(u => !u.IsDelete);
+
+
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 }

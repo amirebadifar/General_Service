@@ -19,5 +19,6 @@ namespace DataLayer.Table
         public string Addres { get; set; }
         public double Addres_X { get; set; }
         public double Addres_Y { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

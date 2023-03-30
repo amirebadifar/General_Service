@@ -25,6 +25,6 @@ namespace CoreLayer.ViewModel
         [DisplayName("لاگین بماند؟")]
         public bool IsLogin { get; set; }
 
-        public string BackPage { get; set; }
+        public string? BackPage { get; set; }
     }
     }
