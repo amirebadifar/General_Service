@@ -1,0 +1,30 @@
+﻿@model CoreLayer.ViewModel.Admin.AddQuestionViewModel
+@{
+    Layout = null;
+}
+<form class="was-validated" method="post" asp-area="Admin" asp-controller="Question" asp-action="AddQuestion">
+    <div class="modal-body">
+        <div class="form-row">
+
+
+            <div class="col-12 mb-3">
+                <label asp-for="Question"></label>
+                <input asp-for="Question" class="form-control" placeholder="پرسش" required="">
+                <span class="text-danger" asp-validation-for="Question"></span>
+            </div>
+            
+            <div class="col-12 mb-3">
+                <label asp-for="Response"></label>
+                <input asp-for="Response" class="form-control" placeholder="پاسخ" required="">
+                <span class="text-danger" asp-validation-for="Response"></span>
+            </div>
+            <br />
+            <br />
+
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="text-white btn btn-success">افزودن</button>
+            <a onclick="CloseAddModal()" class="text-white btn btn-info">انصراف</a>
+        </div>
+    </div>
+</form>

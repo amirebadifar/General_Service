@@ -15,7 +15,7 @@ namespace CoreLayer.Services
         Task<List<ProductTable>> GetProductByNameAsync(string nameProduct);
         Task<List<ProductTable>> GetNewProductAsync();
         Task<ProductTable> GetProductAsync(int id);
-        Task<int> AddProductAsync(InsertProductPartialViewmodel product);
+        Task<int> AddInsertProductAsync(InsertProductPartialViewmodel product);
     }
 
     public class ProductService : IProductService
@@ -47,7 +47,7 @@ namespace CoreLayer.Services
             return _context.Products.SingleOrDefault(p => p.Id == id)!;
         }
 
-        public async Task<int> AddProductAsync(InsertProductPartialViewmodel product)
+        public async Task<int> AddInsertProductAsync(InsertProductPartialViewmodel product)
         {
             InsertProductTable table = new InsertProductTable()
             {

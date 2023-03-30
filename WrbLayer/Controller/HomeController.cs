@@ -91,7 +91,7 @@ namespace WebLayer.Controller
         [HttpPost("/insert/service")]
         public async Task<IActionResult> InsertService(InsertServicePartialViewModel model)
         {
-            await _serviceService.AddServiceAsync(model);
+            await _serviceService.AddInsertServiceAsync(model);
             
             return RedirectToAction("Index",new
             {
@@ -102,7 +102,7 @@ namespace WebLayer.Controller
         [HttpPost("/insert/product")]
         public async Task<IActionResult> InsertProduct(InsertProductPartialViewmodel model)
         {
-            await _productService.AddProductAsync(model);
+            await _productService.AddInsertProductAsync(model);
             
             return RedirectToAction("Index",new
             {

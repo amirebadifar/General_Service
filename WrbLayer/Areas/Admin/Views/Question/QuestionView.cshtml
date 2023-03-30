@@ -1,0 +1,145 @@
+﻿@using CoreLayer.ViewModel.Admin
+@model List<DataLayer.Table.QuestionsTable>
+@{
+    ViewBag.Title = "سوالات متداول";
+}
+
+<br />
+<div class="text-wrap mb-4">
+    <div class="">
+        <div class="alert alert-info">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+            <p><i style="font-size: 20px" class="fa fa-info-circle"></i> برای حذف پرسش روی آن کلیک کنید و برای افزودن پرسش دکمه افزودن را بزنید</p>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.Message == true)
+{
+    <br />
+    <div class="text-wrap mb-4">
+        <div class="">
+            <div class="alert alert-success">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                <p><i style="font-size: 20px" class="fa fa-check"></i> عملیت با موفقیت انجام شد</p>
+            </div>
+        </div>
+    </div>
+}
+else
+  if (ViewBag.Message == false)
+{
+    <br />
+    <div class="text-wrap mb-4">
+        <div class="">
+            <div class="alert alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                <p><i style="font-size: 20px" class="fa fa-close"></i> عملیات با خطا مواجه شد</p>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">برند ها</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+
+            @foreach (var questions in Model)
+            {
+                <div class="col-md-6 col-xl-4">
+                    <a href="javascript:void(0)" onclick="OpenDeleteQuestion('@questions.Id')">
+                        <div class="card text-info bg-info-transparent card-transparent">
+                            <div class="card-body">
+                                <h4 class="card-title">@questions.Questions</h4>
+                                <p class="card-text">@questions.Response</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+
+        </div>
+
+        <div class="d-grid gap-2">
+            <button onclick="OpenAddQuestion()" class="btn btn-success btn-lg text-lg-center mb-1">افزودن پرسش</button>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts
+    {
+    <div class=" modal fade " id="ModalDeleteQuestion" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 id="MyModalTitle" class="modal-title">حذف پرسش</h6>
+                    <a onclick="CloseModal()" title="بستن"><i style="font-size: 25px" class="text-danger fa fa-close"></i></a>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+
+                        <h4 class="text-center text-danger"><i class="text-warning fa fa-warning"></i> آیا از حذف این پرسش اطمینان دارید؟</h4>
+
+                    </div>
+                    <div class="modal-footer">
+                        <a onclick="DeleteQuestion()" class="text-white btn btn-danger">حذف</a>
+                        <a onclick="CloseModal()" class="text-white btn btn-info">انصراف</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" modal fade " id="ModalAddQuestion" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">افزودن پرسش</h6>
+                    <a onclick="CloseAddModal()" title="بستن"><i style="font-size: 25px" class="text-danger fa fa-close"></i></a>
+                </div>
+                <partial name="AddQuestionPartialView" model="new AddQuestionViewModel()"/>
+            </div>
+
+        </div>
+    </div>
+
+
+    <input type="hidden" id="InputidQuestion" />
+
+    <script>
+
+        function CloseModal() {
+            $("#ModalDeleteQuestion").modal("hide");
+        }
+
+        function CloseAddModal() {
+            $("#ModalAddQuestion").modal("hide");
+        }
+
+        function OpenDeleteQuestion(id) {
+            $("#InputidQuestion").val(id);
+            $("#ModalDeleteQuestion").modal("show");
+        }
+
+        function DeleteQuestion() {
+            $("#ModalDeleteQuestion").modal("hide");
+
+            var id = $("#InputidQuestion").val();
+            window.location.href = "/admin/delete/question/" + id;
+
+        }
+
+        function OpenAddQuestion() {
+            $("#ModalAddQuestion").modal("show");
+        }
+
+
+    </script>
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BdQnklVsULApw9Q6yndbhrnpG2R5iuPi2rrRigiQTV4=",
+  "Hash": "4Qa59bOi4jhrpqBY7EBtzZwRLgP9rudeKoQaIIzp30Q=",
   "Source": "WebLayer",
   "BasePath": "_content/WebLayer",
   "Mode": "Default",
@@ -23341,40 +23341,6 @@
       "OriginalItemSpec": "wwwroot\\Files\\AboutImage.png"
     },
     {
-      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\BrandFile\\9acafc74-16d9-4c3d-a765-cab1883ac536.png",
-      "SourceId": "WebLayer",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\",
-      "BasePath": "_content/WebLayer",
-      "RelativePath": "Files/BrandFile/9acafc74-16d9-4c3d-a765-cab1883ac536.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Files\\BrandFile\\9acafc74-16d9-4c3d-a765-cab1883ac536.png"
-    },
-    {
-      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\BrandFile\\be8e1423-dbce-4a24-8168-eb0926da5989.png",
-      "SourceId": "WebLayer",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\",
-      "BasePath": "_content/WebLayer",
-      "RelativePath": "Files/BrandFile/be8e1423-dbce-4a24-8168-eb0926da5989.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Files\\BrandFile\\be8e1423-dbce-4a24-8168-eb0926da5989.png"
-    },
-    {
       "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileBrands\\1.png",
       "SourceId": "WebLayer",
       "SourceType": "Discovered",
@@ -23441,23 +23407,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Files\\FileBrands\\3.png"
-    },
-    {
-      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileBrands\\4.png",
-      "SourceId": "WebLayer",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\",
-      "BasePath": "_content/WebLayer",
-      "RelativePath": "Files/FileBrands/4.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Files\\FileBrands\\4.png"
     },
     {
       "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileBrands\\5.png",
