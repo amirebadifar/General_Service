@@ -69,7 +69,7 @@ namespace WebLayer.Areas.Admin.Controller
                     {
                         Directory.CreateDirectory(physicalPath2);
                     }
-                    using (FileStream stream = System.IO.File.Create(physicalPath2))
+                    await using (FileStream stream = System.IO.File.Create(physicalPath))
                     {
                         await about.Imege.CopyToAsync(stream);
                     }
