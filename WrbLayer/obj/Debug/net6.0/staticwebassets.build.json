@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4Qa59bOi4jhrpqBY7EBtzZwRLgP9rudeKoQaIIzp30Q=",
+  "Hash": "K3CD6sZLHHlLQkykfvH9kvVngJYFs9NjSyY7TYqBFws=",
   "Source": "WebLayer",
   "BasePath": "_content/WebLayer",
   "Mode": "Default",
@@ -20789,6 +20789,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\AdminTamplate\\plugins\\tost\\latest_toastr.js"
+    },
+    {
+      "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\AdminTamplate\\plugins\\tost\\sweetalert.min.js",
+      "SourceId": "WebLayer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\",
+      "BasePath": "_content/WebLayer",
+      "RelativePath": "AdminTamplate/plugins/tost/sweetalert.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\AdminTamplate\\plugins\\tost\\sweetalert.min.js"
     },
     {
       "Identity": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\AdminTamplate\\plugins\\tost\\toastr.css",

@@ -1,0 +1,96 @@
+﻿@model List<DataLayer.Table.ProductTable>
+@{
+    ViewBag.Title = "کالا ها";
+}
+
+
+<a asp-area="Admin" asp-controller="Company" asp-action="addcompany" class="btn btn-success"><i class="fe fe-plus me-2"></i>افزودن کالا</a>
+<br />
+<br />
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">@ViewBag.Title</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                        <thead>
+                            <tr>
+                                <th class="wd-15p border-bottom-0">نام کالا</th>
+                                <th class="wd-15p border-bottom-0">وضعیت</th>
+                                <th class="wd-15p border-bottom-0">قیمت</th>
+                                <th class="wd-25p border-bottom-0">عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var Product in Model)
+                            {
+                                <tr>
+                                    <td>@Product.Name</td>
+                                    <td>@((Product.IsNew) == true ?"نو" : "دسته دوم")</td>
+                                    <td>@Product.Price.ToString().FixedPrice()</td>
+                                    <td name="bstable-actions">
+                                        <div class="btn-list">
+                                            <a asp-area="Admin" asp-controller="Company" asp-action="EditCompany" asp-route-id="@Product.Id" class="btn btn-sm btn-primary">
+                                                <span class="fe fe-edit"> </span>
+                                            </a>
+                                            <button onclick="DeleteCompany(@Product.Id)" type="button" class="btn  btn-sm btn-danger">
+                                                <span class="fe fe-trash-2"> </span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        function DeleteCompany(id) {
+            swal({
+                    title: "آیا اطمینان دارید؟",
+                    text: "پس از حذف ;کالا قادر به بازیابی آن نخواهید بود!",
+                    icon: "warning",
+                    buttons: {
+                        confirm: 'بله',
+                        cancel: 'خیر'
+                    },
+                    dangerMode: true
+                })
+                .then(function (willDelete) {
+                    if (willDelete) {
+                            $.ajax({
+                                type: "Post",
+                                data: { id: id },
+                                url: "/admin/deleteproduct"
+                            }).done(function(result) {
+                                if (result == true) {
+                                    window.location.href = '/admin/company';
+                                } else {
+                                    swal("در حدف کالا خطایی پیش آمده است.", {
+                                        icon: "error",
+                                        button: "باشه"
+                                    });
+                                }
+                            });
+                    }
+                    else {
+                        swal("اطلاعات شما حفظ خواهد شد", {
+                            icon: "error",
+                            button: "باشه"
+                        });
+                    }
+                });
+        }
+    </script>
+}

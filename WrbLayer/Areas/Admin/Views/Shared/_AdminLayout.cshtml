@@ -21,6 +21,16 @@
                     <div class="side-app">
                         <!-- CONTAINER -->
                         <div class="main-container container-fluid">
+                            <!-- PAGE-HEADER -->
+                            <div class="page-header">
+                                <h1 class="page-title">@ViewBag.Title</h1>
+                                <div>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">داشبورد</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+                                    </ol>
+                                </div>
+                            </div>
                             @RenderBody()
                         </div>
                         <!-- CONTAINER CLOSED -->
