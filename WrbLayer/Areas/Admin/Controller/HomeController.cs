@@ -9,10 +9,12 @@ namespace WebLayer.Areas.Admin.Controller
     public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
         IAboutService _aboutService;
+        IContactService _contactService;
 
-        public HomeController(IAboutService aboutService)
+        public HomeController(IAboutService aboutService, IContactService contactService)
         {
             _aboutService = aboutService;
+            _contactService = contactService;
         }
 
         [Route("admin/")]
@@ -91,13 +93,44 @@ namespace WebLayer.Areas.Admin.Controller
 
         #region Contact
 
+        [Route("admin/contact")]
+        public async Task<IActionResult> Contact()
+        {
+            var q = await _contactService.GetContactAsync();
+            return View("ContactView", new ContactViewModel()
+            {
+                Addres = q.Addres,
+                Addres_X = q.Addres_X,
+                Addres_Y = q.Addres_Y,
+                Numberphone = q.Numberphone,
+                ResponseTime = q.ResponseTime,
+            });
+        }
+        [Route("admin/contact")]
+        public async Task<IActionResult> Contact(ContactViewModel contactViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("ContactView",contactViewModel);
+            }
 
+            if (!await _contactService.UpdateContact(contactViewModel))
+            {
+                    return RedirectToAction("About", "Home", new { message = false });
+            }
+            return RedirectToAction("About", "Home", new { message = true });
+        }
 
         #endregion
 
         #endregion
 
         #region Product
+
+        public async Task<IActionResult> Product()
+        {
+            return View();
+        }
 
         #region AddProduct
 

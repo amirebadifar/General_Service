@@ -35,6 +35,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Home/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/OutherPartAdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxPdXRoZXJQYXJ0QWRtaW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
