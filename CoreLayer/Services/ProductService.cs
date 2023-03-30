@@ -16,6 +16,7 @@ namespace CoreLayer.Services
         Task<List<ProductTable>> GetNewProductAsync();
         Task<ProductTable> GetProductAsync(int id);
         Task<int> AddInsertProductAsync(InsertProductPartialViewmodel product);
+        Task<bool> DeleteProduct(int id);
     }
 
     public class ProductService : IProductService
@@ -65,6 +66,21 @@ namespace CoreLayer.Services
             int Id = await _context.SaveChangesAsync();
 
             return Id;
+        }
+
+        public async Task<bool> DeleteProduct(int id)
+        {
+            try
+            {
+                var Product =_context.Products.FirstOrDefault(p => p.Id == id);
+                _context.Products.Remove(Product);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }
