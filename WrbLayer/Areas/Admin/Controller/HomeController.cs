@@ -9,10 +9,12 @@ namespace WebLayer.Areas.Admin.Controller
     public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
         IAboutService _aboutService;
+        IContactService _contactService;
 
-        public HomeController(IAboutService aboutService)
+        public HomeController(IAboutService aboutService, IContactService contactService)
         {
             _aboutService = aboutService;
+            _contactService = contactService;
         }
 
         [Route("admin/")]
@@ -39,7 +41,7 @@ namespace WebLayer.Areas.Admin.Controller
                 ViewBag.existsimg = true;
             }
 
-            if (!message == null)
+            if (message != null)
             {
                 ViewBag.message = message;
             }
@@ -69,7 +71,8 @@ namespace WebLayer.Areas.Admin.Controller
                     {
                         Directory.CreateDirectory(physicalPath2);
                     }
-                    using (FileStream stream = System.IO.File.Create(physicalPath2))
+                    if (about.Imege.ContentType.ToLower() is not ("image/png" or "image/jpg" or "image/gif" or "image/jpeg" or "x-png")) return RedirectToAction("About", "Home", new { message = false }); ;
+                    using (FileStream stream = System.IO.File.Create(physicalPath))
                     {
                         await about.Imege.CopyToAsync(stream);
                     }
@@ -91,7 +94,38 @@ namespace WebLayer.Areas.Admin.Controller
 
         #region Contact
 
+        [Route("admin/contact")]
+        public async Task<IActionResult> Contact(bool? message)
+        {
+            var contact = await _contactService.GetContactAsync();
+            if (message != null)
+            {
+                ViewBag.message = message;
+            }
+            return View("ContactView",new ContactViewModel()
+            {
+                Addres = contact.Addres,
+                Numberphone = contact.Numberphone,
+                ResponseTime = contact.ResponseTime,
+                Addres_X = contact.Addres_X,
+                Addres_Y = contact.Addres_Y,
+            });
+        }
+        [Route("admin/contact")]
+        [HttpPost]
+        public async Task<IActionResult> Contact(ContactViewModel contactViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("ContactView",contactViewModel);
+            }
 
+            if (!await _contactService.UpdateContact(contactViewModel))
+            {
+                return RedirectToAction("About", "Home", new { message = false });
+            }
+            return RedirectToAction("Contact", "Home", new { message = true });
+        }
 
         #endregion
 

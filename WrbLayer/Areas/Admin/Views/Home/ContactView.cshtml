@@ -1,8 +1,7 @@
-﻿@model CoreLayer.ViewModel.Admin.AboutViewModel
+﻿@model CoreLayer.ViewModel.Admin.ContactViewModel
 @{
-    ViewBag.Title = "ویرایش درباره ما";
+    ViewBag.Title = "ویرایش تماس با ما";
 }
-
 <br/>
 
 @if (ViewBag.message!=null)
@@ -37,38 +36,64 @@
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">ویرایش درباره ما</h3>
+        <h3 class="card-title">ویرایش تماس با ما</h3>
     </div>
     <div class="card-body">
-        <form asp-area="Admin" asp-controller="Home" asp-action="About" enctype="multipart/form-data">
+        <form asp-area="Admin" asp-controller="Home" asp-action="Contact">
             <div class="form-group">
-                <label asp-for="Title"></label>
-                <input asp-for="Title" class="form-control">
-                <span class="text-danger" asp-validation-for="Title"></span>
+                <label asp-for="Numberphone"></label>
+                <input asp-for="Numberphone" class="form-control">
+                <span class="text-danger" asp-validation-for="Numberphone"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description"></label>
-                <input asp-for="Description" class="form-control">
-                <span class="text-danger" asp-validation-for="Description"></span>
+                <label asp-for="ResponseTime"></label>
+                <input asp-for="ResponseTime" class="form-control">
+                <span class="text-danger" asp-validation-for="ResponseTime"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Imege"></label>
-                <input asp-for="Imege" class="form-control">
-                <span class="text-danger" asp-validation-for="Imege"></span>
-                @if (ViewBag.existsimg == true)
-                {
-                    <span style="color: green"><i class="fa fa-check"></i>&nbsp;عکس وجود دارد!</span>
-                }
-                else
-                {
-                    <span style="color: red"><i class="fa fa-close"></i>&nbsp;عکس وجود ندارد!</span>
-
-                }
+                <label asp-for="Addres"></label>
+                <input asp-for="Addres" class="form-control">
+                <span class="text-danger" asp-validation-for="Addres"></span>
             </div>
+            <input id="Addres_X" asp-for="Addres_X" />
+            <input id="Addres_Y" asp-for="Addres_Y" />
+            <div id="mapid" style="height: 500px;"></div>
             <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-success btn-lg text-lg-center mb-1">ویرایش درباره ما</button>
+                <button type="submit" class="btn btn-success btn-lg text-lg-center mb-1">ویرایش تماس با ما</button>
             </div>
         </form>
     </div>
 </div>
 
+
+        
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<script>
+    var mymap = L.map('mapid').setView([@Model.Addres_X,@Model.Addres_Y], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+    var marker = L.marker([@Model.Addres_X,@Model.Addres_Y]).addTo(mymap);
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    var marker;
+    mymap.on('click',
+        function (e) {
+            if (marker) {
+                mymap.removeLayer(marker);
+            }
+            marker = new L.Marker(e.latlng).addTo(mymap);
+            var lat = e.latlng.lat;
+            var lon = e.latlng.lng;
+            $("#Addres_X").val(lat);
+            $("#Addres_Y").val(lon);
+
+        });
+</script>

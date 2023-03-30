@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxBYm91dFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Home/ContactView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDb250YWN0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Home/IndexView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
