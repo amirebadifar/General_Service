@@ -1,48 +1,52 @@
 ﻿                <!--APP-SIDEBAR-->
-            <div class="sticky is-expanded" style="margin-bottom: -74px;">
-                <div class="app-sidebar__overlay active" data-bs-toggle="sidebar"></div>
-                <div class="app-sidebar ps ps__rtl ps--active-y open">
-                    <div class="side-header">
-                        <a class="header-brand1" href="index.html">
-                            <img src="/AdminTamplate/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="/AdminTamplate/images/brand/logo-1.png" class="header-brand-img toggle-logo" alt="logo">
-                            <img src="/AdminTamplate/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                            <img src="/AdminTamplate/images/brand/logo-3.png" class="header-brand-img light-logo1" alt="logo">
-                        </a>
-                        <!-- LOGO -->
-                    </div>
-                    <div class="main-sidemenu is-expanded">
-                        <div class="slide-left disabled active is-expanded" id="slide-left">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
-                            </svg>
-                        </div>
-                        <ul class="side-menu open" style="margin-left: 0px; margin-right: 0px;">
-                            <li class="sub-category">
-                                <h3>مدیریت</h3>
-                            </li>
-                            <li class="slide is-expanded">
-                                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">داشبورد</span></a>
-                            </li>
-                            <li class="slide">
-                                <a asp-area="Admin" asp-controller="Home" asp-action="Exam" class="side-menu__item" data-bs-toggle="slide"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label"></span></a>
-                                
-                            </li>
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-map-pin"></i><span class="side-menu__label">مدیرت سایت</span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu" style="display: none;">
-                                    <li><a href="maps1.html" class="slide-item">ویرایش تماس با ما</a></li>
-                                    <li><a asp-area="Admin" asp-controller="Home" asp-action="About" class="slide-item">ویرایش درباره ما</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="slide-right" id="slide-right">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="ps__rail-x" style="left: 1px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 781px; left: 268px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 694px;"></div></div>
-                </div>
-                <!--/APP-SIDEBAR-->
+<div class="sticky is-expanded" style="margin-bottom: -74px;">
+    <div class="app-sidebar__overlay active" data-bs-toggle="sidebar"></div>
+    <div class="app-sidebar ps ps__rtl ps--active-y open">
+        <div class="side-header">
+            <a class="header-brand1" href="index.html">
+                <img src="/AdminTamplate/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                <img src="/AdminTamplate/images/brand/logo-1.png" class="header-brand-img toggle-logo" alt="logo">
+                <img src="/AdminTamplate/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
+                <img src="/AdminTamplate/images/brand/logo-3.png" class="header-brand-img light-logo1" alt="logo">
+            </a>
+            <!-- LOGO -->
+        </div>
+        <div class="main-sidemenu is-expanded">
+            <div class="slide-left disabled active is-expanded" id="slide-left">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+                </svg>
             </div>
+            <ul class="side-menu open" style="margin-left: 0px; margin-right: 0px;">
+                <li class="sub-category">
+                    <h3>مدیریت</h3>
+                </li>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">داشبورد</span></a>
+                </li> 
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="Brand" asp-action="ViewBrands" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">برند ها</span></a>
+                </li>
+                <li class="slide">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Exam" class="side-menu__item" data-bs-toggle="slide"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label"></span></a>
+
+                </li>
+                
+                <li class="slide">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-map-pin"></i><span class="side-menu__label">مدیرت سایت</span><i class="angle fe fe-chevron-right"></i></a>
+                    <ul class="slide-menu" style="display: none;">
+                        <li><a href="maps1.html" class="slide-item">ویرایش تماس با ما</a></li>
+                        <li><a asp-area="Admin" asp-controller="Home" asp-action="About" class="slide-item">ویرایش درباره ما</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="slide-right" id="slide-right">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="ps__rail-x" style="left: 1px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 781px; left: 268px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 694px;"></div></div>
+    </div>
+    <!--/APP-SIDEBAR-->
+</div>

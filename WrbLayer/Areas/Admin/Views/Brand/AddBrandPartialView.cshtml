@@ -1,0 +1,23 @@
+﻿@model CoreLayer.ViewModel.Admin.AddBrandViewModel
+@{
+    Layout = null;
+}
+<form enctype="multipart/form-data" class="was-validated" method="post" asp-area="Admin" asp-controller="Brand" asp-action="AddBrand">
+    <div class="modal-body">
+        <div>
+
+
+            <div class="form-file">
+                <label>عکس برند</label>
+                <input style="direction: ltr;" asp-for="BrandFile" class="form-control" required="">
+            </div>
+            <br />
+            <br />
+
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="text-white btn btn-success">افزودن</button>
+            <a onclick="CloseAddModal()" class="text-white btn btn-info">انصراف</a>
+        </div>
+    </div>
+</form>

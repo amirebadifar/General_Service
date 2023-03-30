@@ -8,7 +8,7 @@
         background-color: black !important
     }
 </style>
-<br>                  
+<br>
 <!-- Start Shop Area -->
 <section class="shop-area ptb-100">
     <div class="container">
@@ -43,7 +43,7 @@
                                     <img src="/Files/FileProducts/@Product.Id/@(Product.Id).png" alt="ProductImage">
                                 </a>
 
-                                <a href="#" class="add-to-cart-btn">مشاهده جزئیات بیشتر <i class="bx bx-detail"></i></a>
+                                <a onclick="ModalProduct('@Product.Id')" href="javascript:void(0)" class="add-to-cart-btn">مشاهده جزئیات بیشتر <i class="bx bx-detail"></i></a>
                             </div>
 
                             <div class="product-content ">
@@ -91,4 +91,18 @@
     </div>
 </section>
 <!-- End Shop Area -->
+@section ButtonPage
+    {
+    <partial name="PartialView/ModalPartialView" />
 
+    <script>
+        function ModalProduct(idProduct) {
+            $.ajax({
+                type: "post",
+                url: "/detail/product/" + idProduct,
+            }).done(function (result) {
+                ShowModal(result, "جزئیات کالا و ثبت درخواست")
+            });
+        }
+    </script>
+}

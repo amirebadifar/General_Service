@@ -52,12 +52,12 @@
 
 
     }
-    
+
     @if (Model.GalleryService.Count == 0)
     {
         <style>
             .navbar-area-two {
-                background-color: black!important
+                background-color: black !important
             }
         </style>
     }
@@ -65,7 +65,7 @@
 </div>
 <!-- End Main Banner Area -->
 <!-- Ml Services Area -->
-<section class="ml-services-area bg-f2f2f7 pt-100 pb-70">
+<section id="Service" class="ml-services-area bg-f2f2f7 pt-100 pb-70">
     <div class="container">
         <div class="section-title">
             <span class="sub-title">خدمات ما</span>
@@ -105,7 +105,7 @@
 </section>
 <!-- End Ml Services Area -->
 <!-- Start Projects Area -->
-<section class="projects-area ptb-100">
+<section id="WorkSample" class="projects-area ptb-100">
     <div class="container">
         <div class="section-title">
             <span class="sub-title">گالری پروژه</span>
@@ -139,7 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 }
             </div>
         }
@@ -156,7 +156,7 @@
 
 <!-- End Projects Area -->
 <!-- Pricing Area -->
-<section class="pricing-area-two pt-100 pb-70 bg-f4f7fe">
+<section id="Product" class="pricing-area-two pt-100 pb-70 bg-f4f7fe">
     <div class="container">
         <div class="section-title">
             <h2>برنامه قیمت گذاری ما</h2>
@@ -233,13 +233,13 @@
     <div class="shape-img6"><img src="UserTamplate/img/shape/6.png" alt="image"></div>
     <div class="shape-img9"><img src="UserTamplate/img/shape/9.png" alt="image"></div>
     <div class="shape-img10"><img src="UserTamplate/img/shape/10.png" alt="image"></div>
-    
-   
+
+
 
 </section>
 <!-- End Pricing Area -->
 <!-- About Us -->
-<section class="choose-area-two pb-100">
+<section id="About" class="choose-area-two pb-100">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -263,7 +263,7 @@
 </section>
 <!-- End About Us -->
 <!-- Start FAQ Area -->
-<section class="faq-area ptb-100 bg-f4f7fe">
+<section id="Question" class="faq-area ptb-100 bg-f4f7fe">
     <div class="container">
         <div class="section-title">
             <span class="sub-title">سوالات متداول</span>
@@ -314,10 +314,10 @@
 </section>
 <!-- End FAQ Area -->
 <!-- Start Partner Area -->
-<section class="partner-area ptb-100">
+<section id="Brand" class="partner-area ptb-100">
     <div class="container">
         <div class="section-title">
-            <span class="sub-title">مشتریان</span>
+            <span class="sub-title">برند محصولات</span>
             <h2>مشتریان عزیز ما</h2>
             <p>ما اعتقاد داریم تعامل برند کلید ارتباطات است. نوآوری واقعی و تجربه مثبت مشتری قلب ارتباطات موفق است. ما اعتقاد داریم تعامل برند کلید ارتباطات است.</p>
         </div>
@@ -367,47 +367,18 @@
 <!-- End Partner Area -->
 @section ButtonPage
     {
-    <div class=" modal fade " id="MyModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h6 id="MyModalTitle" class="modal-title"></h6>
-                    <a onclick="CloseModal()" title="بستن"><i style="font-size: 25px" class="text-danger bx bx-x-circle"></i></a>
-                </div>
-
-                <div class="modal-body">
-                    <div id="MyModalDiv">
-                    </div>
-                    <div class="modal-footer">
-                        <a onclick="CloseModal()" class="text-white btn btn-danger">بستن</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
+   
+        <partial name="PartialView/ModalPartialView"/>
 
     <script>
 
-        //Modal
-
-            function CloseModal() {
-                $("#MyModal").modal("hide");
-            }
-
-        function ShowModal(data, title) {
-
-            $("#MyModalDiv").html(data);
-            $("#MyModalTitle").text(title);
-            $("#MyModal").modal("show");
-        }
         
+
         //Modal Service
-        function ModalService (idService) {
+        function ModalService(idService) {
             $.ajax({
                 type: "post",
-                url: "/detail/service/"+idService,
+                url: "/detail/service/" + idService,
             }).done(function (result) {
                 ShowModal(result, "جزئیات سرویس و ثبت درخواست")
             });
@@ -429,10 +400,20 @@
             }).done(function (result) {
                 ShowModal(result, "جزئیات کالا و ثبت درخواست")
             });
+
+
         }
 
     </script>
 
+    @if (ViewBag.Message == "OkInsert")
+    {
+        <script>
+                 var Message = "<div id='Messagesuccess'><div class='text-center'><i style='Font-Size:40px' class='text-success fa fa-check'></i><p>درخواست شما با موفقیت انجام شد</p></div></div>";
+
+                 ShowModal(Message, "پیغام");
+        </script>
+    }
 
 }
 
