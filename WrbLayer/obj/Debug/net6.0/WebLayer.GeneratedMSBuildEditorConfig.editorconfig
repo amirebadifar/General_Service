@@ -39,6 +39,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Question/AddQuestionPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUXVlc3Rpb25cQWRkUXVlc3Rpb25QYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Question/QuestionView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUXVlc3Rpb25cUXVlc3Rpb25WaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Shared/PartAdminLayout/OutherPartAdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFBhcnRBZG1pbkxheW91dFxPdXRoZXJQYXJ0QWRtaW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

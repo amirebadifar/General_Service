@@ -15,7 +15,7 @@ namespace CoreLayer.Services
         Task<List<ServiceTable>> GetAllServiceAsync();
         Task<List<ServiceTable>> GetGalleryServiceAsync();
         Task<ServiceTable> GetServiceAsync(int idService);
-        Task<int> AddServiceAsync(InsertServicePartialViewModel model);
+        Task<int> AddInsertServiceAsync(InsertServicePartialViewModel model);
     }
 
     public class ServiceService : IServiceService
@@ -42,7 +42,7 @@ namespace CoreLayer.Services
             return _context.Services.SingleOrDefault(s => s.Id == idService)!;
         }
 
-        public async Task<int> AddServiceAsync(InsertServicePartialViewModel model)
+        public async Task<int> AddInsertServiceAsync(InsertServicePartialViewModel model)
         {
             var table = new InsertServiceTable()
             {

@@ -5497,14 +5497,6 @@
       "PackagePath": "staticwebassets\\Files\\AboutImage.png"
     },
     {
-      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\BrandFile\\9acafc74-16d9-4c3d-a765-cab1883ac536.png",
-      "PackagePath": "staticwebassets\\Files\\BrandFile\\9acafc74-16d9-4c3d-a765-cab1883ac536.png"
-    },
-    {
-      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\BrandFile\\be8e1423-dbce-4a24-8168-eb0926da5989.png",
-      "PackagePath": "staticwebassets\\Files\\BrandFile\\be8e1423-dbce-4a24-8168-eb0926da5989.png"
-    },
-    {
       "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileBrands\\1.png",
       "PackagePath": "staticwebassets\\Files\\FileBrands\\1.png"
     },
@@ -5519,10 +5511,6 @@
     {
       "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileBrands\\3.png",
       "PackagePath": "staticwebassets\\Files\\FileBrands\\3.png"
-    },
-    {
-      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileBrands\\4.png",
-      "PackagePath": "staticwebassets\\Files\\FileBrands\\4.png"
     },
     {
       "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileBrands\\5.png",
