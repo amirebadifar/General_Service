@@ -10,12 +10,13 @@ namespace CoreLayer.ViewModel.Admin
 {
     public class ProductViewModel
     {
+        public int? ID { get; set; }
         [DisplayName("نام کالا")]
         [Required(ErrorMessage = "وارد کردن فیلد {0} اجباری هست")]
         [MinLength(3, ErrorMessage = "وارد کردن کمتر از {1} کارکتر مجاز نیست.")]
         [MaxLength(100, ErrorMessage = "وارد کردن بیشتر از {1} کارکتر مجاز نیست.")]
         public string Name { get; set; }
-        [DisplayName("وضعبت")]
+        [DisplayName("دسته دوم")]
         [Required(ErrorMessage = "وارد کردن فیلد {0} اجباری هست")]
         public bool IsNew { get; set; }
         [DisplayName("قیمت")]

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CoreLayer.ViewModel;
+using CoreLayer.ViewModel.Admin;
 using DataLayer;
 using DataLayer.Table;
 
@@ -17,6 +18,9 @@ namespace CoreLayer.Services
         Task<ProductTable> GetProductAsync(int id);
         Task<int> AddInsertProductAsync(InsertProductPartialViewmodel product);
         Task<bool> DeleteProduct(int id);
+        Task<ProductViewModel> GetProductByID(int id);
+        Task<bool> EditProduct(ProductViewModel product);
+        Task<bool> AddProduct(ProductViewModel product);
     }
 
     public class ProductService : IProductService
@@ -72,9 +76,60 @@ namespace CoreLayer.Services
         {
             try
             {
-                var Product =_context.Products.FirstOrDefault(p => p.Id == id);
+                var Product =_context.Products.Single(p => p.Id == id);
                 _context.Products.Remove(Product);
                 await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public async Task<ProductViewModel> GetProductByID(int id)
+        {
+            var product = _context.Products.FirstOrDefault(x => x.Id == id);
+            return new()
+            {
+                Name = product.Name,
+                Price = product.Price,
+                IsNew = product.IsNew,
+                Propertys = product.Propertys,
+            };
+        }
+
+        public async Task<bool> EditProduct(ProductViewModel product)
+        {
+            try
+            {
+                var MainProduct = _context.Products.FirstOrDefault(p => p.Id == product.ID);
+                MainProduct.Price = product.Price;
+                MainProduct.IsNew = product.IsNew;
+                MainProduct.Propertys = product.Propertys;
+                MainProduct.Name = product.Name;
+                _context.Products.Update(MainProduct);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> AddProduct(ProductViewModel product)
+        {
+            try
+            {
+                _context.Products.Add(new ProductTable()
+                {
+                    Price = product.Price,
+                    IsNew = product.IsNew,
+                    Name = product.Name,
+                    Propertys = product.Propertys
+                });
+                _context.SaveChanges();
                 return true;
             }
             catch (Exception e)

@@ -5,7 +5,6 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebLayer
 build_property.RootNamespace = WebLayer
@@ -34,6 +33,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Home/IndexView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Product/AddProductView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxBZGRQcm9kdWN0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Product/EditProductView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxFZGl0UHJvZHVjdFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Product/ProductView.cshtml]

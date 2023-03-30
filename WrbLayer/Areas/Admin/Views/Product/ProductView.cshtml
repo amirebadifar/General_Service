@@ -3,8 +3,33 @@
     ViewBag.Title = "کالا ها";
 }
 
+@if (ViewBag.Message == true)
+{
+    <br />
+    <div class="text-wrap mb-4">
+        <div class="">
+            <div class="alert alert-success">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                <p><i style="font-size: 20px" class="fa fa-check"></i> عملیت با موفقیت انجام شد</p>
+            </div>
+        </div>
+    </div>
+}
+else
+    if (ViewBag.Message == false)
+    {
+        <br />
+        <div class="text-wrap mb-4">
+            <div class="">
+                <div class="alert alert-danger">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                    <p><i style="font-size: 20px" class="fa fa-close"></i> عملیات با خطا مواجه شد</p>
+                </div>
+            </div>
+        </div>
+    }
 
-<a asp-area="Admin" asp-controller="Company" asp-action="addcompany" class="btn btn-success"><i class="fe fe-plus me-2"></i>افزودن کالا</a>
+<a asp-area="Admin" asp-controller="Product" asp-action="AddProduct" class="btn btn-success"><i class="fe fe-plus me-2"></i>افزودن کالا</a>
 <br />
 <br />
 <div class="row row-sm">
