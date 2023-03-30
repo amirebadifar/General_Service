@@ -1,4 +1,5 @@
 using CoreLayer.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,26 +9,26 @@ builder.Services.AddControllersWithViews();
 #region SqlServer
 
 builder.Services.AddDbContext<DataLayer.DB_Context>(o =>
-    o.UseSqlServer("Data Source =.;Initial Catalog=DB_General_Service;Integrated Security=true;TrustServerCertificate=True"));
+    o.UseSqlServer(builder.Configuration.GetValue<string>("SQL:Connection")));
 
 #endregion
 
-//#region Identity
+#region Identity
 
-//builder.Services.AddAuthentication(o =>
-//    {
-//        o.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//        o.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//        o.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//    })
-//    .AddCookie(o =>
-//    {
-//        o.LoginPath = "/login";
-//        o.LogoutPath = "/logout";
-//        o.ExpireTimeSpan = TimeSpan.FromDays(30);
-//    });
+builder.Services.AddAuthentication(o =>
+    {
+        o.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        o.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        o.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    })
+    .AddCookie(o =>
+    {
+        o.LoginPath = "/admin/login";
+        o.LogoutPath = "/admin/logout";
+        o.ExpireTimeSpan = TimeSpan.FromDays(builder.Configuration.GetValue<int>("CountDateIdentity"));
+    });
 
-//#endregion
+#endregion
 
 #region IOC
 
@@ -51,7 +52,25 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.Use(async (context, next) =>
+    {
+        await next();
+        if (context.Response.StatusCode == 404)
+        {
+            context.Response.Redirect("/404");
+            return;
+        }
+    });
 
+if (!builder.Configuration.GetValue<bool>("Activity"))
+{
+    app.Use(async (context, next) =>
+    {
+        await next();
+        context.Response.Redirect("/error");
+        return;
+    });
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
