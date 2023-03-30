@@ -96,5 +96,18 @@ namespace WebLayer.Areas.Admin.Controller
         #endregion
 
         #endregion
+
+        #region Product
+
+        #region AddProduct
+
+        public async Task<IActionResult> AddProduct()
+        {
+            return View();
+        }
+
+        #endregion
+
+        #endregion
     }
 }
