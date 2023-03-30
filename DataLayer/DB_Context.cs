@@ -22,7 +22,21 @@ namespace DataLayer
         public DbSet<QuestionsTable> Questions { get; set; }
         public DbSet<ServiceTable> Services { get; set; }
         public DbSet<WorkSampleTable> WorkSamples { get; set; }
+        public DbSet<AdminTable> Admin { get; set; }
 
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<InsertServiceTable>()
+                .HasQueryFilter(u => !u.IsDelete);
+
+            modelBuilder.Entity<InsertProductTable>()
+                .HasQueryFilter(u => !u.IsDelete);
+
+
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }
