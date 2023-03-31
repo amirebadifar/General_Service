@@ -1,0 +1,54 @@
+﻿@model CoreLayer.ViewModel.Admin.WorkSampleViewModel
+@{
+    ViewBag.Title = "افزودن نمونه کار";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">@ViewBag.Title</h3>
+    </div>
+    <div class="card-body">
+        <form asp-area="Admin" asp-controller="WorkSample" asp-action="EditWorkSample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateTime"></label>
+                <input asp-for="CreateTime" class="form-control">
+                <span class="text-danger" asp-validation-for="CreateTime"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainImage"></label>
+                <input asp-for="MainImage" class="custom-control">
+                <span class="text-danger" asp-validation-for="MainImage"></span>
+                @if (ViewBag.ExistsImge == true)
+                {
+                    <span style="color: green"><i class="fa fa-check"></i>&nbsp;عکس وجود دارد!</span>
+                }
+                else
+                {
+                    <span style="color: red"><i class="fa fa-close"></i>&nbsp;عکس وجود ندارد!</span>
+
+                }
+            </div>
+            <div class="form-group">
+                <label asp-for="Images"></label>
+                <input asp-for="Images" class="custom-control">
+                <span class="text-danger" asp-validation-for="Images"></span>
+                @if (ViewBag.ExistsGallery == true)
+                {
+                    <span style="color: green"><i class="fa fa-check"></i>&nbsp;گالری وجود دارد!</span>
+                }
+                else
+                {
+                    <span style="color: red"><i class="fa fa-close"></i>&nbsp;گالری وجود ندارد!</span>
+
+                }
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success btn-lg text-lg-center mb-1">افزودن نمونه کار</button>
+            </div>
+        </form>
+    </div>
+</div>

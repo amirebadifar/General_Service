@@ -1,0 +1,128 @@
+﻿@model List<DataLayer.Table.WorkSampleTable>
+@{
+    ViewBag.Title = "نمونه کار ها";
+}
+
+@if (ViewBag.Message == true)
+{
+    <div class="text-wrap mb-4">
+        <div class="">
+            <div class="alert alert-success">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                <p><i style="font-size: 20px" class="fa fa-check"></i> عملیت با موفقیت انجام شد</p>
+            </div>
+        </div>
+    </div>
+}
+else
+  if (ViewBag.Message == false)
+{
+    <div class="text-wrap mb-4">
+        <div class="">
+            <div class="alert alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                <p><i style="font-size: 20px" class="fa fa-close"></i> عملیات با خطا مواجه شد</p>
+            </div>
+        </div>
+    </div>
+}
+
+<a asp-area="Admin" asp-controller="WorkSample" asp-action="AddWorkSample" class="btn btn-success"><i class="fe fe-plus me-2"></i>افزودن نمونه کار</a>
+<br />
+<br />
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">@ViewBag.Title</h3>
+            </div>
+
+            <div class="card-body">
+                @if (Model != null)
+                {
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                            <thead>
+                                <tr>
+                                    <th class="wd-15p border-bottom-0">موضوع</th>
+                                    <th class="wd-15p border-bottom-0">تاریخ ایجاد</th>
+                                    <th class="wd-25p border-bottom-0">عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @foreach (var workSample in Model)
+                                {
+                                    <tr>
+                                        <td>@workSample.Title</td>
+                                        <td>@workSample.CreateTime.FixedDateTime()</td>
+                                        <td name="bstable-actions">
+                                            <div class="btn-list">
+                                                <a asp-area="Admin" asp-controller="WorkSample" asp-action="EditWorkSample" asp-route-id="@workSample.Id" class="btn btn-sm btn-primary">
+                                                    <span class="fe fe-edit"> </span>
+                                                </a>
+                                                <button onclick="DeleteCompany(@workSample.Id)" type="button" class="btn  btn-sm btn-danger">
+                                                    <span class="fe fe-trash-2"> </span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                }else
+                {
+                <div class="section-title text-center">
+                    <p class="MyPNot">نمونه کاری برای نمایش وجود ندارد</p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+<script>
+    function DeleteCompany(id) {
+        swal({
+                title: "آیا اطمینان دارید؟",
+                text: "پس از حذف نمونه کار قادر به بازیابی آن نخواهید بود!",
+                icon: "warning",
+                buttons: {
+                    confirm: 'بله',
+                    cancel: 'خیر'
+                },
+                dangerMode: true
+            })
+            .then(function (willDelete) {
+                if (willDelete) {
+                        $.ajax({
+                            type: "Post",
+                            data: { id: id },
+                            url: "/admin/deleteworksample"
+                        }).done(function(result) {
+                            if (result == true) {
+                                window.location.href = '/admin/worksample';
+                            } else {
+                                swal("در حدف نمونه کار خطایی پیش آمده است.", {
+                                    icon: "error",
+                                    button: "باشه"
+                                });
+                            }
+                        });
+                }
+                else {
+                    swal("اطلاعات شما حفظ خواهد شد", {
+                        icon: "error",
+                        button: "باشه"
+                    });
+                }
+            });
+    }
+</script>
+}

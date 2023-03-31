@@ -2,3 +2,64 @@
 @{
     ViewBag.Title = "ویرایش کالا";
 }
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">@ViewBag.Title</h3>
+    </div>
+    <div class="card-body">
+        <form asp-area="Admin" asp-controller="Product" asp-action="EditProduct" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control">
+                <span class="text-danger" asp-validation-for="Price"></span>
+            </div>
+            <div class="custom-controls-stacked">
+                <label class="custom-control custom-checkbox">
+                    <input asp-for="IsNew" type="checkbox" class="custom-control-input">
+                    <label asp-for="IsNew" class="custom-control-label"></label>
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Propertys"></label>
+                <textarea asp-for="Propertys" class="form-control"></textarea>
+                <span class="text-danger" asp-validation-for="Propertys"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainImage"></label>
+                <input asp-for="MainImage" class="custom-control">
+                <span class="text-danger" asp-validation-for="MainImage"></span>
+                @if (ViewBag.ExistsImge == true)
+                {
+                    <span style="color: green"><i class="fa fa-check"></i>&nbsp;عکس وجود دارد!</span>
+                }
+                else
+                {
+                    <span style="color: red"><i class="fa fa-close"></i>&nbsp;عکس وجود ندارد!</span>
+
+                }
+            </div>
+            <div class="form-group">
+                <label asp-for="Images"></label>
+                <input asp-for="Images" class="custom-control">
+                <span class="text-danger" asp-validation-for="Images"></span>
+                @if (ViewBag.ExistsGallery == true)
+                {
+                    <span style="color: green"><i class="fa fa-check"></i>&nbsp;گالری وجود دارد!</span>
+                }
+                else
+                {
+                    <span style="color: red"><i class="fa fa-close"></i>&nbsp;گالری وجود ندارد!</span>
+
+                }
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success btn-lg text-lg-center mb-1">ویرایش کالا</button>
+            </div>
+        </form>
+    </div>
+</div>

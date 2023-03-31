@@ -20,7 +20,7 @@ namespace CoreLayer.Services
         Task<bool> DeleteProduct(int id);
         Task<ProductViewModel> GetProductByID(int id);
         Task<bool> EditProduct(ProductViewModel product);
-        Task<bool> AddProduct(ProductViewModel product);
+        Task<int> AddProduct(ProductViewModel product);
     }
 
     public class ProductService : IProductService
@@ -76,7 +76,7 @@ namespace CoreLayer.Services
         {
             try
             {
-                var Product =_context.Products.Single(p => p.Id == id);
+                var Product = _context.Products.Single(p => p.Id == id);
                 _context.Products.Remove(Product);
                 await _context.SaveChangesAsync();
                 return true;
@@ -105,7 +105,7 @@ namespace CoreLayer.Services
             {
                 var MainProduct = _context.Products.FirstOrDefault(p => p.Id == product.ID);
                 MainProduct.Price = product.Price;
-                MainProduct.IsNew = product.IsNew;
+                MainProduct.IsNew = !product.IsNew;
                 MainProduct.Propertys = product.Propertys;
                 MainProduct.Name = product.Name;
                 _context.Products.Update(MainProduct);
@@ -118,23 +118,24 @@ namespace CoreLayer.Services
             }
         }
 
-        public async Task<bool> AddProduct(ProductViewModel product)
+        public async Task<int> AddProduct(ProductViewModel product)
         {
             try
             {
-                _context.Products.Add(new ProductTable()
+                var Product = new ProductTable()
                 {
                     Price = product.Price,
-                    IsNew = product.IsNew,
+                    IsNew = !product.IsNew,
                     Name = product.Name,
                     Propertys = product.Propertys
-                });
-                _context.SaveChanges();
-                return true;
+                }; 
+                _context.Products.Add(Product);
+                await _context.SaveChangesAsync();
+                return Product.Id;
             }
             catch (Exception e)
             {
-                return false;
+                return -1;
             }
         }
     }

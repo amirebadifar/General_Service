@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace CoreLayer.ViewModel.Admin
 {
@@ -25,5 +26,11 @@ namespace CoreLayer.ViewModel.Admin
         [DisplayName("ویژگی ها")]
         [Required(ErrorMessage = "وارد کردن فیلد {0} اجباری هست")]
         public string Propertys { get; set; }
+
+        [DisplayName("عکس اصلی کالا")]
+        public IFormFile? MainImage { get; set; }
+
+        [DisplayName("عکس های گالری")]
+        public List<IFormFile>? Images { get; set; }
     }
 }
