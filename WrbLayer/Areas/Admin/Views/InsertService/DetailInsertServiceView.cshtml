@@ -1,0 +1,136 @@
+﻿@model CoreLayer.ViewModel.Admin.InsertServiceViewModel
+@{
+    Layout = null;
+}
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="text-center">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">اطلاعات خدمت</div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-id-card-o fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.Service.Title</strong>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-list-ul fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.Service.Descripton</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="text-center">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">اطلاعات درخواست دهنده</div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa fa-address-book-o fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertService.FullName</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-phone fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertService.NumberPhone</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-phone-square fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertService.NumberHome</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-clock-o fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertService.CreateTime.FixedDateTime()</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-address-card-o fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertService.Addres</strong>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-12">
+
+        <div class="text-center">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">نقشه</div>
+                    </div>
+                    <div class="card-body">
+
+                        <div id="mapid" style="height: 300px;"></div>
+                        <script>
+                            var mymap = L.map('mapid').setView([31.58358, 54.44613], 13);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                minZoom: 5,
+                                maxZoom: 19,
+                                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                            }).addTo(mymap);
+                            var marker = L.marker([@Model.InsertService.Addres_X, @Model.InsertService.Addres_Y]).addTo(mymap);
+                            marker.bindPopup("<p style='font-size: 12px'>نقطه مشخص شده</p>").openPopup();
+
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

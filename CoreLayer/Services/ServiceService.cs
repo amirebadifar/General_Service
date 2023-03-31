@@ -7,6 +7,7 @@ using CoreLayer.ViewModel;
 using DataLayer;
 using DataLayer.Table;
 using FixedTextHelper;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreLayer.Services
 {
@@ -16,6 +17,11 @@ namespace CoreLayer.Services
         Task<List<ServiceTable>> GetGalleryServiceAsync();
         Task<ServiceTable> GetServiceAsync(int idService);
         Task<int> AddInsertServiceAsync(InsertServicePartialViewModel model);
+
+        Task<List<InsertServiceTable>> getAllInsertServiceAsync();
+        Task<bool> DeleteInsertServiceAsync(int Id);
+        Task<InsertServiceTable> GetInsertServiceByIdAsync(int id);
+
     }
 
     public class ServiceService : IServiceService
@@ -60,6 +66,35 @@ namespace CoreLayer.Services
             int Id = await _context.SaveChangesAsync();
 
             return Id;
+        }
+
+        public async Task<List<InsertServiceTable>> getAllInsertServiceAsync()
+        {
+            return _context.InsertServices.ToList();
+        }
+
+        public async Task<bool> DeleteInsertServiceAsync(int Id)
+        {
+            try
+            {
+                var InsertService = await _context.InsertServices.SingleAsync(i => i.Id == Id);
+
+                InsertService.IsDelete = true;
+
+                _context.Update(InsertService);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<InsertServiceTable> GetInsertServiceByIdAsync(int id)
+        {
+            return await _context.InsertServices.SingleAsync(i => i.Id == id);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer.Table;
 
 namespace CoreLayer.ViewModel.Admin
 {
@@ -25,5 +26,11 @@ namespace CoreLayer.ViewModel.Admin
         [DisplayName("ویژگی ها")]
         [Required(ErrorMessage = "وارد کردن فیلد {0} اجباری هست")]
         public string Propertys { get; set; }
+    }
+
+    public class InsertProductViewModel
+    {
+        public InsertProductTable InsertProduct { get; set; }
+        public ProductTable Product { get; set; }
     }
 }
