@@ -5533,6 +5533,18 @@
       "PackagePath": "staticwebassets\\Files\\FileProducts\\1\\1.png"
     },
     {
+      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileProducts\\1\\Gallery\\1 - Copy (2).png",
+      "PackagePath": "staticwebassets\\Files\\FileProducts\\1\\Gallery\\1 - Copy (2).png"
+    },
+    {
+      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileProducts\\1\\Gallery\\1 - Copy.png",
+      "PackagePath": "staticwebassets\\Files\\FileProducts\\1\\Gallery\\1 - Copy.png"
+    },
+    {
+      "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileProducts\\1\\Gallery\\1.png",
+      "PackagePath": "staticwebassets\\Files\\FileProducts\\1\\Gallery\\1.png"
+    },
+    {
       "Id": "E:\\Projects\\Asp Net Core\\General_Service\\WrbLayer\\wwwroot\\Files\\FileService\\1\\1.png",
       "PackagePath": "staticwebassets\\Files\\FileService\\1\\1.png"
     },

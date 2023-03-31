@@ -9,7 +9,7 @@
 
 <div style="padding: 15px 30px 5px 30px" class="col-12 row">
     <div class="col-md-4">
-        <img src="/Files/FileProduct/@Model.Id/@(Model.Id).png" style="width: 250px" alt="ProductImage">
+        <img src="/Files/FileProducts/@Model.Id/@(Model.Id).png" style="width: 250px" alt="ProductImage">
     </div>
     <div class="col-md-8">
         @*slider*@
@@ -21,7 +21,7 @@
                 string ProductImageurl = "";
                 int CountProductImage = 0;
                 int CountButtonImage = 0;
-                string ProductImagedirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileProduct", Model.Id.ToString(), "Gallery");
+                string ProductImagedirectoryPath = System.IO.Path.Combine("wwwroot", "Files", "FileProducts", Model.Id.ToString(), "Gallery");
                 if (!Directory.Exists(ProductImagedirectoryPath))
                 {
                     Directory.CreateDirectory(ProductImagedirectoryPath);
@@ -30,7 +30,7 @@
                 {
                     CountProductImage++;
                     ProductImageFileinfo = new FileInfo(filename);
-                    ProductImageurl = "/Files/FileProduct/" + Model.Id.ToString() + "/Gallery/" + System.IO.Path.GetFileName(ProductImageFileinfo.FullName);
+                    ProductImageurl = "/Files/FileProducts/" + Model.Id.ToString() + "/Gallery/" + System.IO.Path.GetFileName(ProductImageFileinfo.FullName);
 
                     <div class="mySlides fadeS">
                         <img src="@ProductImageurl" style="width:250px">

@@ -124,6 +124,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxXb3JrU2FtcGxlVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/e404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxlNDA0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxlcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/IndexView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
