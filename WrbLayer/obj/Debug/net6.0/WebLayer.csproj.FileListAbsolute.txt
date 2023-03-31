@@ -94,6 +94,7 @@ E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\WebLayer.exe
 E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\WebLayer.deps.json
 E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\WebLayer.runtimeconfig.json
 E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\WebLayer.dll
+E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\ref\WebLayer.dll
 E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\WebLayer.pdb
 E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\Azure.Core.dll
 E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\Azure.Identity.dll
@@ -170,4 +171,3 @@ E:\Projects\Asp Net Core\General_Service\WrbLayer\obj\Debug\net6.0\WebLayer.dll
 E:\Projects\Asp Net Core\General_Service\WrbLayer\obj\Debug\net6.0\ref\WebLayer.dll
 E:\Projects\Asp Net Core\General_Service\WrbLayer\obj\Debug\net6.0\WebLayer.pdb
 E:\Projects\Asp Net Core\General_Service\WrbLayer\obj\Debug\net6.0\WebLayer.genruntimeconfig.cache
-E:\Projects\Asp Net Core\General_Service\WrbLayer\bin\Debug\net6.0\ref\WebLayer.dll

@@ -15,8 +15,8 @@ E:\Projects\Asp Net Core\Jeneral_Service\DataLayer\obj\Debug\net6.0\DataLayer.ge
 E:\Projects\Asp Net Core\General_Service\DataLayer\bin\Debug\net6.0\DataLayer.deps.json
 E:\Projects\Asp Net Core\General_Service\DataLayer\bin\Debug\net6.0\DataLayer.runtimeconfig.json
 E:\Projects\Asp Net Core\General_Service\DataLayer\bin\Debug\net6.0\DataLayer.dll
+E:\Projects\Asp Net Core\General_Service\DataLayer\bin\Debug\net6.0\ref\DataLayer.dll
 E:\Projects\Asp Net Core\General_Service\DataLayer\bin\Debug\net6.0\DataLayer.pdb
-E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\DataLayer.csproj.AssemblyReference.cache
 E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
 E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
 E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
@@ -25,4 +25,3 @@ E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\DataLayer.dl
 E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll
 E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\DataLayer.pdb
 E:\Projects\Asp Net Core\General_Service\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
-E:\Projects\Asp Net Core\General_Service\DataLayer\bin\Debug\net6.0\ref\DataLayer.dll

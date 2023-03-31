@@ -1,0 +1,68 @@
+﻿@model CoreLayer.ViewModel.Admin.ServiceViewModel
+@{
+    ViewBag.Title = "ویرایش سرویس";
+}
+<div class="text-wrap mb-4">
+    <div class="">
+        <div class="alert alert-info">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+            <p><i style="font-size: 20px" class="fa fa-info-circle"></i>توجه !   فقط سه تا از خدمات در صفحه اصلی نمایش داده میشود   . اگر شما سرویسی با تیک نمایش در صفحه اصلی درج کنید دیگر سرویس های قبلی که این ویژگی را داشتند دیگر نمایش داده نمیشوند.</p>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">@ViewBag.Title</h3>
+    </div>
+    <div class="card-body">
+        <form asp-area="Admin" asp-controller="Service" asp-action="EditService" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripton"></label>
+                <input asp-for="Descripton" class="form-control">
+                <span class="text-danger" asp-validation-for="Descripton"></span>
+            </div>
+            <div class="custom-controls-stacked">
+                <label class="custom-control custom-checkbox">
+                    <input asp-for="OkGallery" type="checkbox" class="custom-control-input">
+                    <label asp-for="OkGallery" class="custom-control-label"></label>
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainImage"></label>
+                <input asp-for="MainImage" class="custom-control">
+                <span class="text-danger" asp-validation-for="MainImage"></span>
+                @if (ViewBag.ExistsImgeS == true)
+                {
+                    <span style="color: green"><i class="fa fa-check"></i>&nbsp;عکس وجود دارد!</span>
+                }
+                else
+                {
+                    <span style="color: red"><i class="fa fa-close"></i>&nbsp;عکس وجود ندارد!</span>
+
+                }
+            </div>
+            <div class="form-group">
+                <label asp-for="Images"></label>
+                <input asp-for="Images" class="custom-control">
+                <span class="text-danger" asp-validation-for="Images"></span>
+                @if (ViewBag.ExistsGalleryS == true)
+                {
+                    <span style="color: green"><i class="fa fa-check"></i>&nbsp;گالری وجود دارد!</span>
+                }
+                else
+                {
+                    <span style="color: red"><i class="fa fa-close"></i>&nbsp;گالری وجود ندارد!</span>
+
+                }
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success btn-lg text-lg-center mb-1">ویرایش سرویس</button>
+            </div>
+        </form>
+    </div>
+</div>
