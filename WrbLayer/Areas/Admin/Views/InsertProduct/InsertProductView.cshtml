@@ -1,0 +1,166 @@
+﻿@model List<DataLayer.Table.InsertProductTable>
+@{
+    ViewBag.Title = "درخواست کالا ها";
+}
+
+@if (ViewBag.Message == true)
+{
+    <br />
+    <div class="text-wrap mb-4">
+        <div class="">
+            <div class="alert alert-success">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                <p><i style="font-size: 20px" class="fa fa-check"></i> عملیت با موفقیت انجام شد</p>
+            </div>
+        </div>
+    </div>
+}
+else
+   if (ViewBag.Message == false)
+{
+    <br />
+    <div class="text-wrap mb-4">
+        <div class="">
+            <div class="alert alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                <p><i style="font-size: 20px" class="fa fa-close"></i> عملیات با خطا مواجه شد</p>
+            </div>
+        </div>
+    </div>
+}
+
+
+<br />
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">@ViewBag.Title</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="text-center table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                        <thead>
+                            <tr>
+                                <th class="wd-15p border-bottom-0">نام درخواست دهنده</th>
+                                <th class="wd-15p border-bottom-0">شماره تلفن</th>
+                                <th class="wd-15p border-bottom-0">شماره ثابت</th>
+                                <th class="wd-15p border-bottom-0">تاریخ</th>
+                                <th class="wd-25p border-bottom-0">عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var insertProduct in Model)
+                            {
+                                <tr>
+                                    <td>@insertProduct.FullName</td>
+                                    <td>@insertProduct.numberPhone</td>
+                                    <td>@insertProduct.NumberHome</td>
+                                    <td>@insertProduct.CreateTime.FixedDateTime()</td>
+                                    <td name="bstable-actions">
+                                        <div class="btn-list">
+                                            <button onclick="Ditaile(@insertProduct.Id)" type="button" class="btn  btn-sm btn-info">
+                                                <span class="fe fe-info"> </span>
+                                            </button>
+                                            <button onclick="DeleteCompany(@insertProduct.Id)" type="button" class="btn  btn-sm btn-danger">
+                                                <span class="fe fe-trash-2"> </span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    
+    <div class=" modal fade " id="MyModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 id="MyModalTitle" class="modal-title">جزئیات</h6>
+                    <a onclick="CloseModal()" title="بستن"><i style="font-size: 25px" class="text-danger fa fa-close"></i></a>
+                </div>
+
+                <div class="modal-body">
+                    <div id="MyModalDiv">
+                    </div>
+                    <div class="modal-footer">
+                        <a onclick="CloseModal()" class="text-white btn btn-danger">بستن</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    //Modal
+
+    function CloseModal() {
+        $("#MyModal").modal("hide");
+    }
+    
+</script>
+
+    <script>
+        function DeleteCompany(id) {
+            swal({
+                title: "آیا اطمینان دارید؟",
+                text: "پس از حذف ;درخواست کالا قادر به بازیابی آن نخواهید بود!",
+                icon: "warning",
+                buttons: {
+                    confirm: 'بله',
+                    cancel: 'خیر'
+                },
+                dangerMode: true
+            })
+                .then(function (willDelete) {
+                    if (willDelete) {
+                        $.ajax({
+                            type: "Post",
+                            url: "/admin/delete/insert-product/"+id
+                        }).done(function (result) {
+                            if (result == true) {
+                                window.location.href = '/admin/insert-product/?Ok=true';
+
+                            } else {
+                                swal("در حدف درخواست کالا خطایی پیش آمده است.", {
+                                    icon: "error",
+                                    button: "باشه"
+                                });
+                            }
+                        });
+                    }
+                    else {
+                        swal("اطلاعات شما حفظ خواهد شد", {
+                            icon: "error",
+                            button: "باشه"
+                        });
+                    }
+                });
+        }
+    </script>
+    
+    <script>
+        function Ditaile(id) {
+            $.ajax({
+                type: "post",
+                url: "/detail/insert-product/" + id,
+            }).done(function (result) {
+                $("#MyModalDiv").html(result);
+                $("#MyModal").modal("show");
+            });
+        }
+    </script>
+
+
+}

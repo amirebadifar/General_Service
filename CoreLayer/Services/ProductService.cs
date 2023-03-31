@@ -7,6 +7,7 @@ using CoreLayer.ViewModel;
 using CoreLayer.ViewModel.Admin;
 using DataLayer;
 using DataLayer.Table;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreLayer.Services
 {
@@ -17,6 +18,10 @@ namespace CoreLayer.Services
         Task<List<ProductTable>> GetNewProductAsync();
         Task<ProductTable> GetProductAsync(int id);
         Task<int> AddInsertProductAsync(InsertProductPartialViewmodel product);
+        Task<List<InsertProductTable>> getAllInsertProductAsync();
+        Task<bool> DeleteInsertProductAsync(int Id);
+        Task<InsertProductTable> GetInsertProductByIdAsync(int id);
+
         Task<bool> DeleteProduct(int id);
         Task<ProductViewModel> GetProductByID(int id);
         Task<bool> EditProduct(ProductViewModel product);
@@ -71,6 +76,36 @@ namespace CoreLayer.Services
 
             return Id;
         }
+
+        public async Task<List<InsertProductTable>> getAllInsertProductAsync()
+        {
+            return _context.InsertProducts.ToList();
+        }
+
+        public async Task<bool> DeleteInsertProductAsync(int Id)
+        {
+            try
+            {
+                var InsertProduct =await _context.InsertProducts.SingleAsync(i => i.Id == Id);
+
+                InsertProduct.IsDelete = true;
+
+                _context.Update(InsertProduct);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+        }
+
+        public async Task<InsertProductTable> GetInsertProductByIdAsync(int id)
+        {
+            return await _context.InsertProducts.SingleAsync(i => i.Id == id);
+        }
+
 
         public async Task<bool> DeleteProduct(int id)
         {

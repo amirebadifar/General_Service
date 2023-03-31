@@ -54,6 +54,17 @@ namespace WebLayer.Controller
             return View("ProductView",Products);
         }
 
+        [Route("/404")]
+        public async Task<IActionResult> e404()
+        {
+            return View("e404");
+        }
+        
+        [Route("/error")]
+        public async Task<IActionResult> error()
+        {
+            return View("error");
+        }
 
         #region Detsils
 

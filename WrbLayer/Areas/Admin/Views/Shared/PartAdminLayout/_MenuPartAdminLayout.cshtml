@@ -3,7 +3,7 @@
     <div class="app-sidebar__overlay active" data-bs-toggle="sidebar"></div>
     <div class="app-sidebar ps ps__rtl ps--active-y open">
         <div class="side-header">
-            <a class="header-brand1" href="index.html">
+            <a class="header-brand1" asp-action="Index" asp-area="Admin" asp-controller="Home">
                 <img src="/AdminTamplate/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
                 <img src="/AdminTamplate/images/brand/logo-1.png" class="header-brand-img toggle-logo" alt="logo">
                 <img src="/AdminTamplate/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
@@ -18,27 +18,55 @@
                 </svg>
             </div>
             <ul class="side-menu open" style="margin-left: 0px; margin-right: 0px;">
+                
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">پنل مدیریت</span></a>
+                </li> 
+                
                 <li class="sub-category">
-                    <h3>مدیریت</h3>
+                    <h3>سرویس ها</h3>
                 </li>
                 <li class="slide is-expanded">
-                    <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">داشبورد</span></a>
-                </li> 
+                    <a asp-area="Admin" asp-controller="Product" asp-action="Product" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">کالاها</span></a>
+                </li>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="Service" asp-action="Service" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-"></i><span class="side-menu__label">خدمات</span></a>
+                </li>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="WorkSample" asp-action="WorkSample" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-w"></i><span class="side-menu__label">نمونه کار</span></a>
+                </li>
+                
+                <li class="sub-category">
+                    <h3>درخواست ها</h3>
+                </li>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="InsertService" asp-action="ViewInsertService" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">درخواست خدمات</span></a>
+                </li>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="InsertProduct" asp-action="ViewInsertProduct" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-box">+</i><span class="side-menu__label">درخواست کالا ها</span></a>
+                </li>
+                
+                <li class="sub-category">
+                    <h3>جزئیات</h3>
+                </li>
                 <li class="slide is-expanded">
                     <a asp-area="Admin" asp-controller="Brand" asp-action="ViewBrands" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">برند ها</span></a>
                 </li>
-                <li class="slide">
-                    <a asp-area="Admin" asp-controller="Home" asp-action="Exam" class="side-menu__item" data-bs-toggle="slide"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label"></span></a>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="Question" asp-action="ViewQuestion" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon bi bi-question"></i><span class="side-menu__label">سوالات متداول</span></a>
+                </li>
 
+                <li class="sub-category">
+                    <h3>مشخصات</h3>
                 </li>
-                
-                <li class="slide">
-                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-map-pin"></i><span class="side-menu__label">مدیرت سایت</span><i class="angle fe fe-chevron-right"></i></a>
-                    <ul class="slide-menu" style="display: none;">
-                        <li><a href="maps1.html" class="slide-item">ویرایش تماس با ما</a></li>
-                        <li><a asp-area="Admin" asp-controller="Home" asp-action="About" class="slide-item">ویرایش درباره ما</a></li>
-                    </ul>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="About" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon bi bi-patch-question"></i><span class="side-menu__label">درباره ما</span></a>
                 </li>
+                <li class="slide is-expanded">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Contact" class="side-menu__item has-link active" data-bs-toggle="slide"><i class="side-menu__icon fe fe-phone-call"></i><span class="side-menu__label">تماس با ما</span></a>
+                </li>
+
+
             </ul>
             <div class="slide-right" id="slide-right">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">

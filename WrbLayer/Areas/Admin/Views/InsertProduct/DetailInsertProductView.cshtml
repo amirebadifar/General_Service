@@ -1,0 +1,136 @@
+﻿@model CoreLayer.ViewModel.Admin.InsertProductViewModel
+@{
+    Layout = null;
+}
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="text-center">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">اطلاعات کالا</div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fe fe-briefcase fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.Product.Name</strong>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-btc fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.Product.Price.ToString().FixedPrice() تومان</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="text-center">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">اطلاعات درخواست دهنده</div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa fa-address-book-o fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertProduct.FullName</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-phone fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertProduct.numberPhone</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-phone-square fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertProduct.NumberHome</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-clock-o fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertProduct.CreateTime.FixedDateTime()</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3 mt-3">
+                            <div class="me-4 text-center text-primary">
+                                <span><i class="fa fa-address-card-o fs-20"></i></span>
+                            </div>
+                            <div>
+                                <strong>@Model.InsertProduct.Addres</strong>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-12">
+
+        <div class="text-center">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">نقشه</div>
+                    </div>
+                    <div class="card-body">
+
+                        <div id="mapid" style="height: 300px;"></div>
+                        <script>
+                            var mymap = L.map('mapid').setView([31.58358, 54.44613], 13);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                minZoom: 5,
+                                maxZoom: 19,
+                                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                            }).addTo(mymap);
+                            var marker = L.marker([@Model.InsertProduct.Addres_X, @Model.InsertProduct.Addres_Y]).addTo(mymap);
+                            marker.bindPopup("<p style='font-size: 12px'><b>نقطه مشخص شده</b></p>").openPopup();
+
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
+
 namespace CoreLayer.ViewModel.Admin
 {
     public class ProductViewModel
@@ -32,5 +33,11 @@ namespace CoreLayer.ViewModel.Admin
 
         [DisplayName("عکس های گالری")]
         public List<IFormFile>? Images { get; set; }
+    }
+
+    public class InsertProductViewModel
+    {
+        public InsertProductTable InsertProduct { get; set; }
+        public ProductTable Product { get; set; }
     }
 }

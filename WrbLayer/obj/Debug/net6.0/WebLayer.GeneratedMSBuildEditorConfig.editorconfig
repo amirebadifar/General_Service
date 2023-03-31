@@ -5,6 +5,7 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebLayer
 build_property.RootNamespace = WebLayer
@@ -33,6 +34,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Home/IndexView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/InsertProduct/DetailInsertProductView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW5zZXJ0UHJvZHVjdFxEZXRhaWxJbnNlcnRQcm9kdWN0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/InsertProduct/InsertProductView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW5zZXJ0UHJvZHVjdFxJbnNlcnRQcm9kdWN0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/InsertService/DetailInsertServiceView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW5zZXJ0U2VydmljZVxEZXRhaWxJbnNlcnRTZXJ2aWNlVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/InsertService/InsertServiceView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW5zZXJ0U2VydmljZVxJbnNlcnRTZXJ2aWNlVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Areas/Admin/Views/Product/AddProductView.cshtml]
@@ -117,6 +134,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/DetailWorkSampleView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxXb3JrU2FtcGxlVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/e404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxlNDA0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxlcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Projects/Asp Net Core/General_Service/WrbLayer/Views/Home/IndexView.cshtml]
