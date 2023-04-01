@@ -17,6 +17,7 @@ namespace CoreLayer.Services
         Task<int> AddWorkSample(WorkSampleViewModel workSampleViewModel);
         Task<bool> EditWorkSample(WorkSampleViewModel workSampleViewModel);
         Task<WorkSampleViewModel> GetWorkSamplesByID(int Id);
+        Task<int> CountWorkSampleAsync();
     }
 
     public class WorkSampleService : IWorkSampleService
@@ -99,6 +100,11 @@ namespace CoreLayer.Services
                 CreateTime = worksample.CreateTime,
                 Id = Id
             };
+        }
+
+        public async Task<int> CountWorkSampleAsync()
+        {
+            return _context.WorkSamples.Count();
         }
     }
 }

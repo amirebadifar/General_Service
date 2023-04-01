@@ -22,11 +22,13 @@ namespace CoreLayer.Services
         Task<List<InsertServiceTable>> getAllInsertServiceAsync();
         Task<bool> DeleteInsertServiceAsync(int Id);
         Task<InsertServiceTable> GetInsertServiceByIdAsync(int id);
+        Task<int> CountInsertServiceAsync();
 
         Task<bool> DeleteService(int id);
         Task<ServiceViewModel> GetServiceByID(int id);
         Task<bool> EditService(ServiceViewModel Service);
         Task<int> AddService(ServiceViewModel Service);
+        Task<int> CountServiceAsync();
     }
 
     public class ServiceService : IServiceService
@@ -103,6 +105,11 @@ namespace CoreLayer.Services
             return await _context.InsertServices.SingleAsync(i => i.Id == id);
         }
 
+        public async Task<int> CountInsertServiceAsync()
+        {
+            return _context.InsertServices.Count();
+        }
+
         public async Task<bool> DeleteService(int id)
         {
             try
@@ -166,6 +173,11 @@ namespace CoreLayer.Services
             {
                 return -1;
             }
+        }
+
+        public async Task<int> CountServiceAsync()
+        {
+            return _context.Services.Count();
         }
     }
 }

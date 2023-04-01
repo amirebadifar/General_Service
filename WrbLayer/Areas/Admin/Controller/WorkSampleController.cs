@@ -1,10 +1,12 @@
 ﻿using CoreLayer.Services;
 using CoreLayer.ViewModel.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebLayer.Areas.Admin.Controller
 {
     [Area("admin")]
+    [Authorize]
     public class WorkSampleController : Microsoft.AspNetCore.Mvc.Controller
     {
         private IWorkSampleService _workSampleService;

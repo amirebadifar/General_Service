@@ -21,11 +21,13 @@ namespace CoreLayer.Services
         Task<List<InsertProductTable>> getAllInsertProductAsync();
         Task<bool> DeleteInsertProductAsync(int Id);
         Task<InsertProductTable> GetInsertProductByIdAsync(int id);
+        Task<int> CountInsertProductAsync();
 
         Task<bool> DeleteProduct(int id);
         Task<ProductViewModel> GetProductByID(int id);
         Task<bool> EditProduct(ProductViewModel product);
         Task<int> AddProduct(ProductViewModel product);
+        Task<int> CountProductAsync();
     }
 
     public class ProductService : IProductService
@@ -106,6 +108,11 @@ namespace CoreLayer.Services
             return await _context.InsertProducts.SingleAsync(i => i.Id == id);
         }
 
+        public async Task<int> CountInsertProductAsync()
+        {
+            return _context.InsertProducts.Count();
+        }
+
 
         public async Task<bool> DeleteProduct(int id)
         {
@@ -172,6 +179,11 @@ namespace CoreLayer.Services
             {
                 return -1;
             }
+        }
+
+        public async Task<int> CountProductAsync()
+        {
+            return _context.Products.Count();
         }
     }
 }

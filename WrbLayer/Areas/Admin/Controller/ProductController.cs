@@ -1,10 +1,12 @@
 ﻿using CoreLayer.Services;
 using CoreLayer.ViewModel.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebLayer.Areas.Admin.Controller
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductController : Microsoft.AspNetCore.Mvc.Controller
     {
         IProductService _productService;

@@ -54,11 +54,13 @@
                 <input asp-for="Addres" class="form-control">
                 <span class="text-danger" asp-validation-for="Addres"></span>
             </div>
-            <input id="Addres_X" asp-for="Addres_X" />
-            <input id="Addres_Y" asp-for="Addres_Y" />
+            <input id="Addres_X" type="hidden" asp-for="Addres_X" />
+            <input id="Addres_Y" type="hidden" asp-for="Addres_Y" />
             <div id="mapid" style="height: 500px;"></div>
             <div class="d-grid gap-2">
+                <br/>
                 <button type="submit" class="btn btn-success btn-lg text-lg-center mb-1">ویرایش تماس با ما</button>
+
             </div>
         </form>
     </div>
@@ -81,7 +83,7 @@
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
     }).addTo(mymap);
     var marker = L.marker([@Model.Addres_X,@Model.Addres_Y]).addTo(mymap);
-    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    marker.bindPopup("<b>نقطه مشخص شده</b>").openPopup();
     var marker;
     mymap.on('click',
         function (e) {

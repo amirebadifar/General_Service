@@ -1,26 +1,43 @@
 ﻿using System.Text;
 using CoreLayer.Services;
 using CoreLayer.ViewModel.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebLayer.Areas.Admin.Controller
 {
     [Area("Admin")]
+    [Authorize]
     public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
         IAboutService _aboutService;
         IContactService _contactService;
+        private IServiceService _serviceService;
+        private IProductService _productService;
+        private IWorkSampleService _workSampleService;
 
-        public HomeController(IAboutService aboutService, IContactService contactService)
+        public HomeController(IAboutService aboutService, IContactService contactService, IServiceService serviceService, IProductService productService, IWorkSampleService workSampleService)
         {
             _aboutService = aboutService;
             _contactService = contactService;
+            _serviceService = serviceService;
+            _productService = productService;
+            _workSampleService = workSampleService;
         }
 
-        [Route("admin/")]
+        [Route("/admin/")]
         public async Task<IActionResult> Index()
         {
-            return View("IndexView");
+            var pageModel = new IndexViewModel()
+            {
+                CountInsertProduct = await _productService.CountInsertProductAsync(),
+                CountInsertService = await _serviceService.CountInsertServiceAsync(),
+                CountProduct = await _productService.CountProductAsync(),
+                CountService = await _serviceService.CountServiceAsync(),
+                CountWorkSample = await _workSampleService.CountWorkSampleAsync()
+            };
+
+            return View("IndexView",pageModel);
         }
 
 
@@ -95,9 +112,11 @@ namespace WebLayer.Areas.Admin.Controller
 
         #region Contact
 
-        [Route("admin/contact")]
-        public async Task<IActionResult> Contact()
+        [Route("/admin/contact")]
+        public async Task<IActionResult> Contact(bool? message)
         {
+            ViewBag.message = message;
+            
             var q = await _contactService.GetContactAsync();
             return View("ContactView", new ContactViewModel()
             {
@@ -108,7 +127,7 @@ namespace WebLayer.Areas.Admin.Controller
                 ResponseTime = q.ResponseTime,
             });
         }
-        [Route("admin/contact")]
+        [HttpPost("/admin/contact")]
         public async Task<IActionResult> Contact(ContactViewModel contactViewModel)
         {
             if (!ModelState.IsValid)

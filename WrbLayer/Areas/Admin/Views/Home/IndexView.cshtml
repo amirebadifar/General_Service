@@ -1,4 +1,79 @@
-﻿
+﻿@model CoreLayer.ViewModel.Admin.IndexViewModel
 @{
     ViewBag.Title = "پنل مدیرت";
 }
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card service">
+            <div class="card-body">
+                <div class="item-box text-center">
+                    <div class=" text-center  mb-4 text-success"><i class="icon icon-people"></i></div>
+                    <div class="item-box-wrap">
+                        <h5 class="mb-2">درخواست خدمات</h5>
+                        <h5 class="mb-2">@Model.CountInsertService.ToString().FixedPrice()</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card service">
+            <div class="card-body">
+                <div class="item-box text-center">
+                    <div class=" text-center  mb-4 text-warning"><i class="bi bi-box-seam"></i></div>
+                    <div class="item-box-wrap">
+                        <h5 class="mb-2">درخواست کالاها</h5>
+                        <h5 class="mb-2">@Model.CountInsertProduct.ToString().FixedPrice()</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card service">
+            <div class="card-body">
+                <div class="item-box text-center">
+                    <div class=" text-center  mb-4 text-success"><i class="icon icon-people"></i></div>
+                    <div class="item-box-wrap">
+                        <h5 class="mb-2">خدمات</h5>
+                        <h5 class="mb-2">@Model.CountService.ToString().FixedPrice()</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card service">
+            <div class="card-body">
+                <div class="item-box text-center">
+                    <div class=" text-center  mb-4 text-warning"><i class="fe fe-box"></i></div>
+                    <div class="item-box-wrap">
+                        <h5 class="mb-2">کالا ها</h5>
+                        <h5 class="mb-2">@Model.CountProduct.ToString().FixedPrice()</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card service">
+            <div class="card-body">
+                <div class="item-box text-center">
+                    <div class=" text-center  mb-4 text-danger"><i class="fa fa-drivers-license-o"></i></div>
+                    <div class="item-box-wrap">
+                        <h5 class="mb-2">نمونه کار ها</h5>
+                        <h5 class="mb-2">@Model.CountWorkSample.ToString().FixedPrice()</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
