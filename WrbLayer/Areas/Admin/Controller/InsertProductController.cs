@@ -1,11 +1,13 @@
 ﻿using CoreLayer.Services;
 using CoreLayer.ViewModel.Admin;
 using DataLayer.Table;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebLayer.Areas.Admin.Controller
 {
     [Area("Admin")]
+    [Authorize]
     public class InsertProductController : Microsoft.AspNetCore.Mvc.Controller
     {
         private IProductService _productService;

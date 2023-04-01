@@ -1,10 +1,12 @@
 ﻿using CoreLayer.Services;
 using CoreLayer.ViewModel.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebLayer.Areas.Admin.Controller
 {
     [Area("Admin")]
+    [Authorize]
     public class QuestionController : Microsoft.AspNetCore.Mvc.Controller
     {
         private IQuestionService _questionService;

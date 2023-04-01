@@ -44,7 +44,7 @@ namespace WebLayer.Controller
                 var Principal = new ClaimsPrincipal(Identity);
                 var Properties = new AuthenticationProperties
                 {
-                    IsPersistent = false
+                    IsPersistent = model.IsLogin
                 };
 
                 await HttpContext.SignInAsync(Principal, Properties);
